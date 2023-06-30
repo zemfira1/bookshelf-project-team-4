@@ -4,13 +4,13 @@
 
 .container {
   padding-inline: 20px;
+  margin-inline: auto;
   background-color: aqua;
 }
 
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
-    margin-inline: auto;
   }
 }
 
