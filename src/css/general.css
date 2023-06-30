@@ -19,12 +19,28 @@
     width: 768px;
     padding-inline: 32px;
   }
+
+  .side-bar {
+    display: flex;
+    gap: 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
     padding-inline: 24px;
+  }
+
+  .page{
+    display: flex;
+    gap: 40px;
+  }
+
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 86px;
   }
 }
 
