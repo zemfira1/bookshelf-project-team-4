@@ -1,0 +1,7 @@
+.darkmode body {
+  background-color: var(--darkcolor);
+}
+.darkmode .nav-item {
+  background-color: var(--darkcolor);
+  color: #e3e3e3;
+}
