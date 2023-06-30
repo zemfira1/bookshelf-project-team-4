@@ -1,5 +1,41 @@
-<section class="section">
-  <div class="container">
-    <p>Я Хедер. Удали p перед началом работы)</p>
-  </div>
-</section>
+<header class="header container">
+  <nav class="nav">
+    <ul class="nav-list nav-container">
+      <li class="nav-item">
+        <svg class="" width="99" height="24">
+          <use href="./images/sprite.svg#icon-logo-light"></use>
+        </svg>
+      </li>
+
+      <div class="mob-hidden main-nav-block">
+        <ul class="site-nav">
+          <li class="item">
+            <a class="nav-link current link" href="./index.html">Home</a>
+          </li>
+          <li class="item">
+            <a class="nav-link link" href="./shopping-list.html"
+              >Shopping list
+              <svg class="" width="20" height="20">
+                <use href="./images/sprite.svg#icon-shop"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <li class="nav-item switch-burger">
+        <img src="./images/switcher-light.svg" width="40" height="24" alt="" />
+        <svg class="nav-burger" width="28" height="28">
+          <use href="./images/sprite.svg#icon-burger"></use>
+          <!-- <img
+            class=""
+            src="./images/switcher-light.svg"
+            width="40"
+            height="24"
+            alt=""
+          /> -->
+        </svg>
+      </li>
+    </ul>
+  </nav>
+</header>
