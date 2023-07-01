@@ -12,17 +12,18 @@ const jsBooks = document.querySelector(".js-books");
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
 
-async function openPopupModal() {
+async function openPopupModal(event) {
   try {
-    const bookData = await getBookInfo();
+    popupModalBackground.classList.replace("hidden", "visible");
+    const bookData = await getBookInfo(event.target.dataset.id);
   }
   catch {
-
+    console.log("Error");
   }
 }
 
 function closePopupModal() {
-
+  popupModalBackground.classList.replace("visible", "hidden");
 }
 
 
