@@ -9,15 +9,22 @@ const bookDescription = document.querySelector(".book-description");
 const addToListButton = document.querySelector(".add-to-list-button");
 const jsBooks = document.querySelector(".js-books");
 
+let bookData;
+let bookList;
+
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
+addToListButton.addEventListener("click",  addToListFunction);
 
 async function openPopupModal(event) {
   try {
     popupModalBackground.classList.replace("hidden", "visible");
-    const bookData = await getBookInfo(event.target.dataset.id);
-    bookImage.setAttribute("src", bookData["book_image"]);
-    bookImage.setAttribute("alt", bookData["title"]);
+    bookData = await getBookInfo(event.target.dataset.id);
+    bookImage.setAttribute("src", bookData.book_image);
+    bookImage.setAttribute("alt", bookData.title);
+    bookTitle.textContent = bookData.title;
+    bookAuthor.textContent = bookData.author;
+    bookDescription.textContent = bookData.description;
   }
   catch {
     console.log("Error");
@@ -32,19 +39,11 @@ function closePopupModal() {
 async function getBookInfo(bookId) {
   return await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
 }
-/*
 
-event.target.dataset.id
-
-`https://books-backend.p.goit.global/books/${event.target.dataset.id}`
-
-
-
-#icon-x-close
-
-*/
-
-
+function addToListFunction() {
+  bookList.push(bookData);
+  addToListButton.textContent = "REMOVE FROM SHOPING LIST";
+}
 
 const bookObjectExample = {
   "_id": "642fd89ac8cf5ee957f12361",
