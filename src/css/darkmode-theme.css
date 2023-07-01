@@ -1,0 +1,14 @@
+.darkmode body {
+  background-color: #202024;
+}
+.darkmode .nav-list {
+  background-color: #111111;
+  color: #ffffff;
+}
+.darkmode .nav-link {
+  color: #ffffff;
+}
+.darkmode .swg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
