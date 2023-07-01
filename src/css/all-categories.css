@@ -1,0 +1,29 @@
+.category-item {
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.32px;
+  margin-bottom: 24px;
+}
+.category-item a:hover,
+.category-item a:focus {
+  color: #4f2ee8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Mobile 375 */
+@media screen and (min-width: 375px) {
+  .js-category-block {
+    padding: 40px 0px;
+  }
+}
+/* Tablet 768*/
+@media screen and (min-width: 768px) {
+  .category-item {
+    margin-bottom: 32px;
+  }
+}
+/* DEKSTOP 1440*/
+@media screen and (min-width: 1440px) {
+}
