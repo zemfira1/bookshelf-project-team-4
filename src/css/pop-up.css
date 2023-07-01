@@ -5,3 +5,12 @@
 .visible {
     display: flex;
 }
+
+.popup-modal-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(17, 17, 17, 0.40);
+}
