@@ -47,13 +47,18 @@ async function addMarkupTopBooks() {
         let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `<li class="book-item">
-        <img src="${books[i].book_image}" alt="${books[i].title}">
-        <p class="book-title">${books[i].title}</p>
-        <p class="book-title">${books[i].author}</p>
+          <a class="book-item-link" href="#" data-bookid="${books[i]._id}">  
+            <img src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
+            <p class="book-title">${books[i].title}</p>
+            <p class="book-title">${books[i].author}</p>
+          </a>
         </li>
         `;
         }
-        const markUp = title + itemBook + '</ul>';
+        const markUp =
+          title +
+          itemBook +
+          '</ul><button type="button" class="btn-category" data-open-category>see more</button>';
         return markUp;
       })
       .join('');
@@ -69,9 +74,12 @@ async function addMarkupTopBooks() {
 
 addMarkupTopBooks()
   .then(markUp => {
-    console.log(markUp);
+    refs.books.innerHTML = markUp;
   })
   .catch(error => {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = '';
+    refs.categoryList.innerHTML = `<div>
+    <p>Sorry, an error occurred!</p>
+    <img src="#" alt="Empty block">
+    </div>`;
   });
