@@ -1,23 +1,49 @@
+import axios from "axios";
+
 const popupModalBackground = document.querySelector(".popup-modal-background");
+const popupModalCloseButton = document.querySelector(".popup-modal-close-button");
 const bookImage = document.querySelector(".book-image");
 const bookTitle = document.querySelector(".book-title");
 const bookAuthor = document.querySelector(".book-author");
 const bookDescription = document.querySelector(".book-description");
 const addToListButton = document.querySelector(".add-to-list-button");
+const jsBooks = document.querySelector(".js-books");
 
+jsBooks.addEventListener("click", openPopupModal);
+popupModalCloseButton.addEventListener("click", closePopupModal);
+
+async function openPopupModal() {
+  try {
+    const bookData = await getBookInfo();
+  }
+  catch {
+
+  }
+}
+
+function closePopupModal() {
+
+}
+
+
+async function getBookInfo(bookId) {
+  return await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
+}
 /*
+
+event.target.dataset.id
 
 `https://books-backend.p.goit.global/books/${event.target.dataset.id}`
 
-"js-books"
+
 
 #icon-x-close
 
 */
 
-/*
 
-{
+
+const bookObjectExample = {
   "_id": "642fd89ac8cf5ee957f12361",
   "list_name": "Middle Grade Paperback Monthly",
   "date": "2023-04-07T08:46:57.000Z",
@@ -75,4 +101,3 @@ const addToListButton = document.querySelector(".add-to-list-button");
 }
 
 
-*/
