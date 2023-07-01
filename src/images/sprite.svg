@@ -1,10 +1,10 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
-<symbol id="icon-burger" viewBox="0 0 32 32">
-<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" stroke="#000" style="stroke: var(--color1, #000)" d="M22.667 13.333h-18.667"></path>
-<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" stroke="#000" style="stroke: var(--color1, #000)" d="M28 8h-24"></path>
-<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" stroke="#000" style="stroke: var(--color1, #000)" d="M28 18.667h-24"></path>
-<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" stroke="#000" style="stroke: var(--color1, #000)" d="M22.667 24h-18.667"></path>
+<symbol id="burger" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 13.333h-18.667"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M28 8h-24"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M28 18.667h-24"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 24h-18.667"></path>
 </symbol>
 <symbol id="icon-burger-blue" viewBox="0 0 32 32">
 <path fill="none" stroke="#4f2ee8" style="stroke: var(--color1, #4f2ee8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M22.667 13.333h-18.667"></path>
@@ -64,6 +64,8 @@
 <symbol id="icon-x-close-blue" viewBox="0 0 32 32">
 <path fill="none" stroke="#4f2ee8" style="stroke: var(--color1, #4f2ee8)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.4286" d="M24 8l-16 16M8 8l16 16"></path>
 </symbol>
-
+<symbol id="icon-caret-down" viewBox="0 0 28 32">
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M5.898 12h16.513l-7.423 8.391c-0.221 0.25-0.521 0.39-0.834 0.39s-0.613-0.14-0.834-0.39l-7.422-8.391z"></path>
+</symbol>
 </defs>
 </svg>

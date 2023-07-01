@@ -1,21 +1,25 @@
-<header class="header container">
+<header class="header">
   <nav class="nav">
     <ul class="nav-list nav-container">
       <li class="nav-item">
-        <svg class="" width="99" height="24">
-          <use href="./images/sprite.svg#icon-logo-light"></use>
-        </svg>
+        <a href="./index.html">
+          <svg class="" width="99" height="24">
+            <use href="./images/sprite.svg#icon-logo-light"></use></svg
+        ></a>
       </li>
 
       <div class="mob-hidden main-nav-block">
         <ul class="site-nav">
           <li class="item">
-            <a class="nav-link current link" href="./index.html">Home</a>
+            <a class="nav-link" href="./index.html" data-action="index">Home</a>
           </li>
           <li class="item">
-            <a class="nav-link link" href="./shopping-list.html"
+            <a
+              class="nav-link"
+              href="./shopping-list.html"
+              data-action="shopping-list"
               >Shopping list
-              <svg class="" width="20" height="20">
+              <svg class="shopping-bag" width="20" height="20">
                 <use href="./images/sprite.svg#icon-shop"></use>
               </svg>
             </a>
@@ -23,14 +27,23 @@
         </ul>
       </div>
 
-      <li class="nav-item switch-burger">
+      <li class="nav-item">
         <label class="switch">
           <input type="checkbox" />
           <span class="slider round"></span>
         </label>
-        <svg class="nav-burger" width="28" height="28">
-          <use href="./images/sprite.svg#icon-burger"></use>
+        <svg class="tab-hidden ico-burger" width="28" height="28">
+          <use href="./images/sprite.svg#burger"></use>
         </svg>
+      </li>
+      <li class="mob-hidden">
+        <div class="user-acc">
+          <img class="user-img" src="./images/user.png" alt="user" />
+          <p class="user-name">Stephen</p>
+          <svg class="" width="23" height="26">
+            <use href="./images/sprite.svg#icon-caret-down"></use>
+          </svg>
+        </div>
       </li>
     </ul>
   </nav>
