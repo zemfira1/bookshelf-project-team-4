@@ -1,13 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const currentPage = window.location.href;
-  const menuLinks = document.querySelectorAll('.site-nav .nav-link');
+window.addEventListener('DOMContentLoaded', function () {
+  const homeLink = document.querySelector('a[data-action="index"]');
+  homeLink.classList.add('current');
 
-  menuLinks.forEach(function (link) {
-    const linkAction = link.getAttribute('data-action');
-    if (currentPage.includes(linkAction)) {
-      link.classList.add('current');
-    } else {
-      link.classList.remove('current');
-    }
-  });
+  const currentUrl = window.location.href;
+  if (currentUrl.endsWith('/shopping-list.html')) {
+    homeLink.classList.remove('current');
+
+    const shoppingListLink = document.querySelector(
+      'a[data-action="shopping-list"]'
+    );
+    shoppingListLink.classList.add('current');
+  }
 });
