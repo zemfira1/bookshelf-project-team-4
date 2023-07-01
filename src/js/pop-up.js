@@ -16,6 +16,8 @@ async function openPopupModal(event) {
   try {
     popupModalBackground.classList.replace("hidden", "visible");
     const bookData = await getBookInfo(event.target.dataset.id);
+    bookImage.setAttribute("src", bookData["book_image"]);
+    bookImage.setAttribute("alt", bookData["title"]);
   }
   catch {
     console.log("Error");
