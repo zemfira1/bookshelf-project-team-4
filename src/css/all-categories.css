@@ -6,13 +6,6 @@
   margin-bottom: 24px;
   width: 307px;
 }
-.category-item a:hover,
-.category-item a:focus {
-  color: #4f2ee8;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-}
 .js-category-block {
   width: 335px;
   height: 228px;
@@ -20,7 +13,12 @@
   display: flex;
   flex-direction: column;
 }
-
+.current-category{
+  color: #4f2ee8;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
 /* Mobile 375 */
 @media screen and (min-width: 375px) {
 }
