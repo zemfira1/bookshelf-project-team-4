@@ -43,7 +43,13 @@
   background: #eac645;
 }
 
-/* temp */
+.ico-burger {
+  stroke: currentColor;
+}
+.ico-burger:hover,
+.ico-burger:focus {
+  stroke: rgba(79, 46, 232, 1);
+}
 .main-nav-block {
   margin-left: 34px;
   margin-right: 90px;
