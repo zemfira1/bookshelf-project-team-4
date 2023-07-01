@@ -37,13 +37,13 @@ async function addMarkupCategoryList() {
       })
       .join('');
     return `<ul class="category-list">
-      <li class="category-item"><a href="#">All categories</a></li>
+      <li class="category-item current-category"><a href="#">All categories</a></li>
       ${markUp}
     </ul>`;
   } catch (error) {
     Notify.failure(error.message);
     return `<ul class="category-list">
-      <li class="category-item"><a href="#">All categories</a></li>
+      <li class="category-item current-category"><a href="#">All categories</a></li>
     </ul>`;
   }
 }
