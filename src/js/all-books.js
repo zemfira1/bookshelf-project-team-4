@@ -6,7 +6,6 @@ const refs = {
 };
 
 let viewportWidth = window.innerWidth;
-console.log(viewportWidth);
 let countColumn;
 
 if (viewportWidth >= 1440) {
@@ -16,8 +15,6 @@ if (viewportWidth >= 1440) {
 } else {
   countColumn = 1;
 }
-
-console.log(countColumn);
 
 const request = new BookShelf();
 request.param = 'top-books';
@@ -47,14 +44,14 @@ async function addMarkupTopBooks() {
     const markUp = response
       .map(({ list_name, books }) => {
         const title = `<h3 class="topbook-title">${list_name}</h3><ul class="topbooks-list">`;
-        const itemBook = '';
+        let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `<li class="book-item">
-      <img src="${books[i].book_image}" alt="${books[i].title}">
-      <p class="book-title">${books[i].title}</p>
-      <p class="book-title">${books[i].author}</p>
-      </li>
-      `;
+        <img src="${books[i].book_image}" alt="${books[i].title}">
+        <p class="book-title">${books[i].title}</p>
+        <p class="book-title">${books[i].author}</p>
+        </li>
+        `;
         }
         const markUp = title + itemBook + '</ul>';
         return markUp;
@@ -69,3 +66,12 @@ async function addMarkupTopBooks() {
     </div>`;
   }
 }
+
+addMarkupTopBooks()
+  .then(markUp => {
+    console.log(markUp);
+  })
+  .catch(error => {
+    Notify.failure(error.message);
+    refs.categoryList.innerHTML = '';
+  });
