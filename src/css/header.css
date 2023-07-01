@@ -35,6 +35,9 @@
   align-items: center;
   padding: 8px 16px;
   border-radius: 36px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -165,6 +168,8 @@ input:checked + .slider:before {
 
 .user-acc {
   display: flex;
+  justify-content:space-around;
+  padding: 12px 4px;
   align-items: center;
   width: 184px;
   height: 45px;
@@ -172,13 +177,6 @@ input:checked + .slider:before {
   border-radius: 36px;
   background: #4f2ee8;
   margin-left: 24px;
-}
-
-.user-img {
-  width: 37px;
-  height: 37px;
-  margin-left: 12px;
-  margin-right: 9px;
 }
 
 .user-name {
