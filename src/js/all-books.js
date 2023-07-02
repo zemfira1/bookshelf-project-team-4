@@ -48,9 +48,9 @@ async function addMarkupTopBooks() {
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `<li class="book-item">
           <a class="book-item-link" href="#" data-bookid="${books[i]._id}">  
-            <img src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
+            <img class="book-item-img" src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
             <p class="book-title">${books[i].title}</p>
-            <p class="book-title">${books[i].author}</p>
+            <p class="book-author">${books[i].author}</p>
           </a>
         </li>
         `;
@@ -58,7 +58,7 @@ async function addMarkupTopBooks() {
         const markUp =
           title +
           itemBook +
-          '</ul><button type="button" class="btn-category" data-open-category>see more</button>';
+          '</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div>';
         return markUp;
       })
       .join('');
