@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const jsBooks = document.querySelector(".js-books");
 const popupModalBackground = document.querySelector(".popup-modal-background");
 const popupModalCloseButton = document.querySelector(".popup-modal-close-button");
 const bookImage = document.querySelector(".book-image");
@@ -7,35 +8,35 @@ const bookTitle = document.querySelector(".book-title");
 const bookAuthor = document.querySelector(".book-author");
 const bookDescription = document.querySelector(".book-description");
 const addToListButton = document.querySelector(".add-to-list-button");
-const jsBooks = document.querySelector(".js-books");
+const amazonLink = document.querySelector(".amazon-link");
+const bookshopLink = document.querySelector(".bookshop-link");
+const openbookLink = document.querySelector(".openbook-link");
 
 let bookData;
-let bookShopingList;
+let bookShopingList = [];
 
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
 
 
 async function openPopupModal(event) {
+  event.preventDefault();
   try {
+    bookData = await getBookInfo(event.target.parentNode.dataset.id);
     popupModalBackground.classList.replace("hidden", "visible");
-    bookData = await getBookInfo(event.target.dataset.id);
     bookImage.setAttribute("src", bookData.book_image);
     bookImage.setAttribute("alt", bookData.title);
     bookTitle.textContent = bookData.title;
     bookAuthor.textContent = bookData.author;
     bookDescription.textContent = bookData.description;
+    const amazonURL = bookData.buy_links.find((buyLink) => buyLink.name === "Amazon").url;
+    const bookshopURL = bookData.buy_links.find((buyLink) => buyLink.name === "Bookshop").url;
+    //const openbookURL = bookData.buy_links.find((buyLink) => {buyLink.name === "Openbook";}).url;
+    amazonLink.setAttribute("href", amazonURL);
+    bookshopLink.setAttribute("href", bookshopURL);
+    //openbookLink.setAttribute("href", openbookURL);
+    bookPresenseCheck();
 
-    if (bookShopingList.some((book) => {book._id === bookData._id})) {
-      addToListButton.removeEventListener("click", addToListFunction);
-      addToListButton.addEventListener("click", removeFromListFunction);
-      addToListButton.textContent = "REMOVE FROM SHOPING LIST";
-    }
-    else {
-      addToListButton.removeEventListener("click", removeFromListFunction);
-      addToListButton.addEventListener("click", addToListFunction);
-      addToListButton.textContent = "ADD TO SHOPING LIST";
-    }
   }
   catch {
     console.log("Error");
@@ -49,75 +50,38 @@ function closePopupModal() {
 
 
 async function getBookInfo(bookId) {
-  return await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
+  const response = await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
+  return await response.data;
+}
+
+
+function bookPresenseCheck() {
+  if (bookShopingList.some((book) => book._id === bookData._id)) {
+    addToListButton.removeEventListener("click", addToListFunction);
+    addToListButton.addEventListener("click", removeFromListFunction);
+    addToListButton.textContent = "REMOVE FROM SHOPING LIST";
+  }
+  else {
+    addToListButton.removeEventListener("click", removeFromListFunction);
+    addToListButton.addEventListener("click", addToListFunction);
+    addToListButton.textContent = "ADD TO SHOPING LIST";
+  }
 }
 
 
 function addToListFunction() {
+  console.log("Added!");
   bookShopingList.push(bookData);
+  console.log(bookShopingList);
+  bookPresenseCheck();
 }
 
 
 function removeFromListFunction() {
-  bookShopingList = bookShopingList.filter((book) => {book._id !== bookData._id});
-}
-
-
-const bookObjectExample = {
-  "_id": "642fd89ac8cf5ee957f12361",
-  "list_name": "Middle Grade Paperback Monthly",
-  "date": "2023-04-07T08:46:57.000Z",
-  "age_group": "",
-  "amazon_product_url": "https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20",
-  "article_chapter_link": "",
-  "author": "Barbara O'Connor",
-  "book_image": "https://storage.googleapis.com/du-prd/books/images/9781250144058.jpg",
-  "book_image_width": 330,
-  "book_image_height": 485,
-  "book_review_link": "",
-  "book_uri": "nyt://book/46604242-8624-57d1-bdd4-424c21cde273",
-  "contributor": "by Barbara O'Connor",
-  "contributor_note": "",
-  "created_date": "2023-04-05 23:10:17",
-  "description": "",
-  "first_chapter_link": "",
-  "price": "0.00",
-  "primary_isbn10": "1250144051",
-  "primary_isbn13": "9781250144058",
-  "publisher": "Square Fish",
-  "rank": 1,
-  "rank_last_week": 0,
-  "sunday_review_link": "",
-  "title": "WISH",
-  "updated_date": "2023-04-05 23:10:17",
-  "weeks_on_list": 0,
-  "buy_links": [
-    {
-      "name": "Amazon",
-      "url": "https://www.amazon.com/Wish-Barbara-OConnor/dp/1250144051?tag=NYTBSREV-20"
-    },
-    {
-      "name": "Apple Books",
-      "url": "https://goto.applebooks.apple/9781250144058?at=10lIEQ"
-    },
-    {
-      "name": "Barnes and Noble",
-      "url": "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250144058"
-    },
-    {
-      "name": "Books-A-Million",
-      "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fp%252FWISH%252FBarbara%252BO%252527Connor%252F9781250144058&url2=https%3A%2F%2Fwww.anrdoezrs.net%2Fclick-7990613-35140%3Furl%3Dhttps%253A%252F%252Fwww.booksamillion.com%252Fsearch%253Fquery%253DWISH%252BBarbara%252BO%252527Connor"
-    },
-    {
-      "name": "Bookshop",
-      "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fbookshop.org%2Fa%2F3546%2F9781250144058&url2=https%3A%2F%2Fbookshop.org%2Fbooks%3Faffiliate%3D3546%26keywords%3DWISH"
-    },
-    {
-      "name": "IndieBound",
-      "url": "https://du-gae-books-dot-nyt-du-prd.appspot.com/redirect?url1=https%3A%2F%2Fwww.indiebound.org%2Fbook%2F9781250144058%3Faff%3DNYT&url2=https%3A%2F%2Fwww.indiebound.org%2Fsearch%2Fbook%3Fkeys%3DWISH%2BBarbara%2BO%2527Connor%26aff%3DNYT"
-    }
-  ],
-  "__v": 0
+  console.log("Removed!");
+  bookShopingList = bookShopingList.filter((book) => book._id !== bookData._id);
+  console.log(bookShopingList);
+  bookPresenseCheck();
 }
 
 
