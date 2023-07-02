@@ -42,14 +42,18 @@ body {
     font-size: 14px;
     font-weight: 400;
     color: #111111;
-    background-color: #D0D0D0;
+    background-color: #F6F6F6;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+/* :root{
+    --
+} */
 .hidden {
+    display: none;
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -62,3 +66,37 @@ html {
     margin: -1px;
 }
 
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: #4F2EE8;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

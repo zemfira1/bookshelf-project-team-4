@@ -1,16 +1,23 @@
-.section {
-  padding-top: 40px;
-}
-
 .container {
   padding-inline: 20px;
   margin-inline: auto;
-  background-color: aqua;
+}
+.page{
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+.page-sh{
+  padding-bottom: 40px;
 }
 
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
+  }
+  .side-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 }
 
@@ -19,10 +26,17 @@
     width: 768px;
     padding-inline: 32px;
   }
-
   .side-bar {
     display: flex;
-    gap: 32px;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+  .page {
+    padding-bottom: 100px;
+  }
+  .page-sh {
+    padding-bottom: 40px;
   }
 }
 
@@ -31,15 +45,17 @@
     width: 1440px;
     padding-inline: 24px;
   }
-
   .page {
     display: flex;
     gap: 40px;
+    padding-bottom: 72px;
   }
-
   .side-bar {
     display: flex;
     flex-direction: column;
     gap: 86px;
+  }
+  .page-sh {
+    padding-bottom: 40px;
   }
 }
