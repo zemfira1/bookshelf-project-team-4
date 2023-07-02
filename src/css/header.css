@@ -175,6 +175,7 @@ input:checked + .slider:before {
   height: 45px;
   flex-shrink: 0;
   border-radius: 36px;
+  border-color: transparent;
   background: #4f2ee8;
   margin-left: 24px;
 }

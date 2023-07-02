@@ -1,0 +1,13 @@
+.support-container{
+    width: 335px;
+    height: auto;
+    border-radius: 16px;
+    background-color: #4F2EE8;
+    background-image: linear-gradient(to top,#B9ACF6, #4F2EE8);
+}
+
+@media screen and (min-width: 1440px){
+    .support-container{
+        width: 356px;
+    }
+}
