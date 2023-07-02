@@ -1,0 +1,138 @@
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 9999;
+}
+
+.burger-menu.show {
+  display: block;
+}
+
+.nav-container-menu {
+  height: 64px;
+  padding: 18px 20px;
+  margin: 0 auto;
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid #111;
+  background: #fff;
+}
+.nav-list-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-item-menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.menu-main-part {
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  width: 100%;
+  height: 100%;
+  padding-top: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-name {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.44px;
+  margin-left: 68px;
+}
+
+.name-menu-home {
+  border-radius: 36px;
+  background: #eac645;
+  padding: 8px 16px;
+  align-items: flex-start;
+  border: 0;
+  gap: 10px;
+  color: #111;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+
+.name-shoping-list-modal {
+  color: #fff;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+.nav-link-menu {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  border-radius: 36px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-menu:hover,
+.nav-link-menu:focus,
+.nav-link-menu.current {
+  background: #eac645;
+}
+.shopping-bag-menu {
+  margin-left: 4px;
+}
+.menu-nav-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 183px 125px;
+}
+
+.logout-button {
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  cursor: pointer;
+  width: 118px;
+  height: 48px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+}
+
+/* @media screen and (min-width: 768px) {
+  .menu-main-part {
+    display: none;
+  }
+  .nav-contaier-menu {
+    display: none;
+  }
+} */
