@@ -2,14 +2,16 @@
   <nav class="nav-menu">
     <ul class="nav-list-menu nav-container-menu">
       <li class="nav-item-menu">
-        <svg class="" width="99" height="24">
-          <use href="./images/sprite.svg#icon-logo-light"></use>
-        </svg>
+        <a class="main-logo" href="./index.html">
+          <svg width="24" height="24">
+            <use href="./images/sprite.svg#icon-logo"></use>
+          </svg>
+          <svg class="logo-bookshelf" width="77" height="13">
+            <use href="./images/sprite.svg#icon-bookshelf"></use>
+          </svg>
+        </a>
       </li>
 
-      <div class="mob-hidden main-nav-block">
-        <ul class="site-nav-menu"></ul>
-      </div>
       <li class="nav-item-menu switch-burger">
         <label class="switch">
           <input type="checkbox" />
@@ -18,11 +20,22 @@
         <svg class="nav-burger" width="28" height="28">
           <use href="./images/sprite.svg#icon-x-close"></use>
         </svg>
+        <div class="mob-hidden main-nav-block">
+          <ul class="site-nav-menu"></ul>
+        </div>
       </li>
     </ul>
   </nav>
   <div class="menu-main-part">
-    <p class="menu-name">Stephen</p>
+    <button class="user-acc">
+      <svg class="user-icon" width="37" height="37">
+        <use href="./images/sprite.svg#icon-user"></use>
+      </svg>
+      <p class="user-name">User</p>
+      <svg class="" width="23" height="26">
+        <use href="./images/sprite.svg#icon-caret-down"></use>
+      </svg>
+    </button>
     <div class="menu-nav-main">
       <a class="name-menu-home" href="./index.html" data-action="index">Home</a>
       <a
@@ -30,11 +43,28 @@
         href="./shopping-list.html"
         data-action="shopping-list"
         >Shopping list
-        <svg class="shopping-bag-menu swg" width="20" height="20">
+        <svg class="swg shopping-bag swg-shopping" width="20" height="20">
           <use href="./images/sprite.svg#icon-shop"></use>
         </svg>
       </a>
     </div>
-    <button class="logout-button" type="button">Log out</button>
+    <div class="logout-container">
+      <button class="logout-button" type="button">
+        Log out
+        <span class="shopping-bag swg">
+          <svg width="20" height="20">
+            <use href="./images/sprite.svg#icon-x-close"></use>
+          </svg>
+        </span>
+      </button>
+    </div>
   </div>
+  <picture>
+    <source srcset="./images/groupbooks-2x.png 2x" type="image/png" />
+    <img
+      src="./images/groupbooks-1x.png"
+      alt="Опис зображення"
+      class="overlay-image"
+    />
+  </picture>
 </div>
