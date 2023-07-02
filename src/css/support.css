@@ -2,6 +2,7 @@
     width: 335px;
     height: auto;
     border-radius: 16px;
+    border: none;
     background-color: #4F2EE8;
     background-image: linear-gradient(to top,#B9ACF6, #4F2EE8);
 }
