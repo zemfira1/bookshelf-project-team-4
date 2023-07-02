@@ -42,6 +42,8 @@
 }
 .support-image{
   height: 42px;
+  color:#ffffff;
+  filter: brightness()invert(1);
 }
 
 .scroll-btn{
