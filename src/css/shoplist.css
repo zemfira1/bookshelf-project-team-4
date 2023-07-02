@@ -1,0 +1,12 @@
+.empty-shopping-list-img {
+  display: block;
+  margin-left: 355px;
+  margin-top: 232px;
+}
+.empty-shopping-list-msg {
+  width: 349px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02px;
+  color: rgb(0, 0, 0, 0.6);
+}
