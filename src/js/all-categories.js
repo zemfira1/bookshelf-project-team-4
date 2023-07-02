@@ -1,5 +1,6 @@
 import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { showLoader, hideLoader } from './exp-func';
 
 const refs = {
   categoryList: document.querySelector('.js-category-block'),
@@ -48,9 +49,11 @@ async function addMarkupCategoryList() {
   }
 }
 
+showLoader('.categories .loader');
 addMarkupCategoryList()
   .then(markUp => {
     refs.categoryList.innerHTML = markUp;
+    hideLoader('.categories .loader');
   })
   .catch(error => {
     Notify.failure(error.message);

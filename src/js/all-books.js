@@ -1,5 +1,6 @@
 import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { showLoader, hideLoader } from './exp-func';
 
 const refs = {
   books: document.querySelector('.js-books'),
@@ -43,7 +44,7 @@ async function addMarkupTopBooks() {
 
     const markUp = response
       .map(({ list_name, books }) => {
-        const title = `<h3 class="topbook-title">${list_name}</h3><ul class="topbooks-list">`;
+        const title = `<div class="one-category"><h3 class="topbook-title">${list_name}</h3><ul class="topbooks-list">`;
         let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `<li class="book-item">
@@ -58,7 +59,7 @@ async function addMarkupTopBooks() {
         const markUp =
           title +
           itemBook +
-          '</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div>';
+          '</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div></div>';
         return markUp;
       })
       .join('');
@@ -72,9 +73,11 @@ async function addMarkupTopBooks() {
   }
 }
 
+showLoader('.books .loader');
 addMarkupTopBooks()
   .then(markUp => {
     refs.books.innerHTML = markUp;
+    hideLoader('.books .loader');
   })
   .catch(error => {
     Notify.failure(error.message);
