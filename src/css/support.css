@@ -1,0 +1,72 @@
+.container-support{
+  display: flex;
+  flex-direction: column;
+  width: 356px;
+  height: 490px;
+  padding: 40px;
+  border-radius: 16px;
+  background: rgb(79, 46, 232);
+  background: linear-gradient(180deg, rgba(79, 46, 232, 1) 0%, rgba(255, 255, 255, 1) 130%);
+}
+.support-section-title{
+    font-family: DM Sans;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+    color:white;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.donation-organisation-list{
+  max-height: 200px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.support-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.support-item-number{
+  font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color:white;
+    margin-right:16px;
+}
+.support-image{
+  height: 42px;
+}
+
+.scroll-btn{
+  width: 40px;
+  border: none;
+  background: transparent;
+  align-self: center;
+}
+
+.support{
+  display: flex;
+  justify-content: center;
+}
+
+.ukraine-emblem{
+ 
+}
+
+.hidden-scroll-support{
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .container-support {
+    width: 356px;
+  }
+}
+
