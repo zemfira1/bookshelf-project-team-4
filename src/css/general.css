@@ -37,6 +37,7 @@
   }
   .page-sh {
     padding-bottom: 40px;
+    flex-direction: row;
   }
 }
 
