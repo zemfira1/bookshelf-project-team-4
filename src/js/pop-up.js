@@ -10,11 +10,11 @@ const addToListButton = document.querySelector(".add-to-list-button");
 const jsBooks = document.querySelector(".js-books");
 
 let bookData;
-let bookList;
+let bookShopingList;
 
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
-addToListButton.addEventListener("click",  addToListFunction);
+
 
 async function openPopupModal(event) {
   try {
@@ -25,11 +25,23 @@ async function openPopupModal(event) {
     bookTitle.textContent = bookData.title;
     bookAuthor.textContent = bookData.author;
     bookDescription.textContent = bookData.description;
+
+    if (bookShopingList.some((book) => {book._id === bookData._id})) {
+      addToListButton.removeEventListener("click",  addToListFunction);
+      addToListButton.addEventListener("click",  removeFromListFunction);
+      addToListButton.textContent = "REMOVE FROM SHOPING LIST";
+    }
+    else {
+      addToListButton.removeEventListener("click",  removeFromListFunction);
+      addToListButton.addEventListener("click",  addToListFunction);
+      addToListButton.textContent = "ADD TO SHOPING LIST";
+    }
   }
   catch {
     console.log("Error");
   }
 }
+
 
 function closePopupModal() {
   popupModalBackground.classList.replace("visible", "hidden");
@@ -40,10 +52,16 @@ async function getBookInfo(bookId) {
   return await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
 }
 
+
 function addToListFunction() {
-  bookList.push(bookData);
-  addToListButton.textContent = "REMOVE FROM SHOPING LIST";
+  bookShopingList.push(bookData);
 }
+
+
+function removeFromListFunction() {
+  bookShopingList = bookShopingList.filter((book) => {book._id !== bookData._id});
+}
+
 
 const bookObjectExample = {
   "_id": "642fd89ac8cf5ee957f12361",
