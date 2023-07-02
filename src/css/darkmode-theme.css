@@ -12,3 +12,26 @@
   fill: #ffffff;
   stroke: #ffffff;
 }
+.darkmode .logo-bookshelf {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+.darkmode .best-sellers {
+  color: #ffffff;
+}
+.darkmode .btn-category {
+  background-color: #111111;
+  color: #ffffff;
+}
+.darkmode .book-title {
+  color: #ffffff;
+}
+.darkmode .category-item {
+  color: #ffffff;
+}
+.darkmode .current-category {
+  color: #eac645;
+}
+.darkmode .empty-shopping-list-msg {
+  color: #ffffff;
+}
