@@ -13,15 +13,18 @@
   justify-content: space-between;
 }
 
-.nav-item {
+.main-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
-
+.nav-item,
 .site-nav {
   display: flex;
   align-items: center;
+}
+.nav-item {
+  gap: 14px;
 }
 
 .nav-link {
@@ -46,6 +49,11 @@
   background: #eac645;
 }
 
+/* for dark theme */
+/* .logo-bookshelf {
+  fill: rgba(243, 243, 243, 1);
+} */
+
 .ico-burger {
   stroke: currentColor;
 }
@@ -55,7 +63,7 @@
 }
 .main-nav-block {
   margin-left: 34px;
-  margin-right: 90px;
+  margin-right: 80px;
 }
 .shopping-bag {
   margin-left: 3px;
@@ -85,7 +93,7 @@
   }
   .main-nav-block {
     margin-left: 76px;
-    margin-right: 735px;
+    margin-right: 725px;
   }
 }
 
@@ -134,7 +142,7 @@
   width: 18px;
   left: 2px;
   bottom: 1px;
-  background-color: white;
+  background-color: #fff;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -168,7 +176,7 @@ input:checked + .slider:before {
 
 .user-acc {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   padding: 12px 4px;
   align-items: center;
   width: 184px;
