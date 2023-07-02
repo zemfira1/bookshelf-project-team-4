@@ -44,7 +44,7 @@ async function addMarkupTopBooks() {
 
     const markUp = response
       .map(({ list_name, books }) => {
-        const title = `<div class="one-category"><h3 class="topbook-title">${list_name}</h3><ul class="topbooks-list">`;
+        const title = `<div class="one-category"><h2 class="topbook-title">${list_name}</h2><ul class="topbooks-list">`;
         let itemBook = '';
         for (let i = 0; i < countColumn; i += 1) {
           itemBook += `<li class="book-item">

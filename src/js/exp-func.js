@@ -11,4 +11,5 @@ function hideLoader(loaderSelector) {
     el.classList.add('hidden');
   }
 }
+
 export { showLoader, hideLoader };
