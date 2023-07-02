@@ -27,13 +27,13 @@ async function openPopupModal(event) {
     bookDescription.textContent = bookData.description;
 
     if (bookShopingList.some((book) => {book._id === bookData._id})) {
-      addToListButton.removeEventListener("click",  addToListFunction);
-      addToListButton.addEventListener("click",  removeFromListFunction);
+      addToListButton.removeEventListener("click", addToListFunction);
+      addToListButton.addEventListener("click", removeFromListFunction);
       addToListButton.textContent = "REMOVE FROM SHOPING LIST";
     }
     else {
-      addToListButton.removeEventListener("click",  removeFromListFunction);
-      addToListButton.addEventListener("click",  addToListFunction);
+      addToListButton.removeEventListener("click", removeFromListFunction);
+      addToListButton.addEventListener("click", addToListFunction);
       addToListButton.textContent = "ADD TO SHOPING LIST";
     }
   }
