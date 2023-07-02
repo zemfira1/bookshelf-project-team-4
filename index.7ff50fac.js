@@ -6,16 +6,16 @@ let t;"use strict";var e,n,r,o,i,s,a="undefined"!=typeof globalThis?globalThis:"
       <li class="category-item current-category"><a href="#">All categories</a></li>
     </ul>`}})().then(t=>{eF.categoryList.innerHTML=t}).catch(t=>{(0,eD.Notify).failure(t.message),eF.categoryList.innerHTML='<ul class="category-list"><li class="category-item"><a href="#">All categories</a></li></ul>'});const eW={books:document.querySelector(".js-books")};let eq=window.innerWidth;t=eq>=1440?5:eq>=768?3:1;const e$=new eP;async function eH(){try{let t=await e$.getRequest();if(!t.data)return(0,eD.Notify).warning("Sorry, an error occurred!"),[];return 0===t.data.length&&(0,eD.Notify).warning("Sorry, the search result is empty!"),t.data}catch(t){return(0,eD.Notify).failure(t.message),[]}}e$.param="top-books",(async function(){try{let e=await eH(),n=e.map(({list_name:e,books:n})=>{let r=`<h3 class="topbook-title">${e}</h3><ul class="topbooks-list">`,o="";for(let e=0;e<t;e+=1)o+=`<li class="book-item">
           <a class="book-item-link" href="#" data-bookid="${n[e]._id}">  
-            <img src="${n[e].book_image}" alt="${n[e].title}" loading="lazy">
+            <img class="book-item-img" src="${n[e].book_image}" alt="${n[e].title}" loading="lazy">
             <p class="book-title">${n[e].title}</p>
-            <p class="book-title">${n[e].author}</p>
+            <p class="book-author">${n[e].author}</p>
           </a>
         </li>
-        `;let i=r+o+'</ul><button type="button" class="btn-category" data-open-category>see more</button>';return i}).join("");return n}catch(t){return(0,eD.Notify).failure(t.message),`<div>
+        `;let i=r+o+'</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div>';return i}).join("");return n}catch(t){return(0,eD.Notify).failure(t.message),`<div>
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`}})().then(t=>{eW.books.innerHTML=t}).catch(t=>{(0,eD.Notify).failure(t.message),eW.categoryList.innerHTML=`<div>
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`}),window.addEventListener("DOMContentLoaded",function(){let t=document.querySelector('a[data-action="index"]');t.classList.add("current");let e=window.location.href;if(e.endsWith("/shopping-list.html")){t.classList.remove("current");let e=document.querySelector('a[data-action="shopping-list"]');e.classList.add("current")}});
-//# sourceMappingURL=index.00ff2201.js.map
+//# sourceMappingURL=index.7ff50fac.js.map
