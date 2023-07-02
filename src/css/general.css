@@ -28,7 +28,8 @@
   }
   .side-bar {
     display: flex;
-    gap: 32px;
+    flex-direction: row;
+    gap: 30px;
     margin-bottom: 100px;
   }
   .page {
