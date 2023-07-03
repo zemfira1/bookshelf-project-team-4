@@ -1,146 +1,156 @@
 .hidden {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: flex;
+  display: flex;
 }
 
 .popup-modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: rgba(17, 17, 17, 0.40);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(17, 17, 17, 0.4);
 }
-.popup-modal{
-    position: relative;
-    width: 335px;
-    height: 762px;
-    padding: 40px 24px;
-    padding-top: 41px;
-    background-color: #FFFFFF;
-    border-radius: 18px;
-    border: 1px solid;
-    border-color: #111111;
+.popup-modal {
+  position: relative;
+  width: 335px;
+  height: 762px;
+  padding: 40px 24px;
+  padding-top: 41px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid;
+  border-color: #111111;
 }
 .popup-modal-close-button {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    width: 24px;
-    height: 24px;
-    border: none;
-    background-color: inherit;
-    margin-bottom: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: inherit;
+  margin-bottom: 4px;
+}
+.popup-modal-close {
+  stroke: currentColor;
+  fill: currentColor;
+}
+.popup-modal-close:hover,
+.popup-modal-close:focus {
+  fill: #4f2ee8;
+  stroke: #4f2ee8;
+  color: #4f2ee8;
 }
 
 .popup-modal-close-button svg {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
-.book-image{
-    width: 287px;
-    height: 408px;
-    border-radius: 8px;
-    border: none;
+.book-image {
+  width: 287px;
+  height: 408px;
+  border-radius: 8px;
+  border: none;
 }
-.book-info-container{
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.book-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.book-title{
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 4px;
+.book-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 .book-author {
-    font-size: 12px;
-    font-style: italic;
-    font-weight: 400;
-    color: #B4AFAF;
-    margin-bottom: 18px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: #b4afaf;
+  margin-bottom: 18px;
 }
-.book-description{
-    margin-bottom: 14px;
+.book-description {
+  margin-bottom: 14px;
 }
-.book-store-links{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-    width: 173px;
-    height: 36px;
+.book-store-links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 173px;
+  height: 36px;
 }
 /* .change-color{
     color: #ffffff;
     filter: brightness()invert(1);
 } */
-.button-center{
-    display: flex;
-    justify-content: center;
+.button-center {
+  display: flex;
+  justify-content: center;
 }
-.add-to-list-button{
-    height: 46px;
-    width: auto;
-    border: 2px solid;
-    border-radius: 40px;
-    border-color: #4F2EE8;
-    background-color: inherit;
-    padding: 14px 28px;
+.add-to-list-button {
+  height: 46px;
+  width: auto;
+  border: 2px solid;
+  border-radius: 40px;
+  border-color: #4f2ee8;
+  background-color: inherit;
+  padding: 14px 28px;
 }
-.button-popup-text{
-    font-weight: 700;
-    color: inherit;
+.button-popup-text {
+  font-weight: 700;
+  color: inherit;
 }
 
-@media screen and (min-width: 768px){
-  .popup-modal{
+@media screen and (min-width: 768px) {
+  .popup-modal {
     width: 579px;
     height: 465px;
     padding: 40px;
- }
-    .popup-modal-close-button {
+  }
+  .popup-modal-close-button {
     right: 24px;
     top: 24px;
     width: 28px;
     height: 28px;
-}
-.book-image {
+  }
+  .book-image {
     width: 192px;
     height: 281px;
-}
-.book-info-container {
+  }
+  .book-info-container {
     flex-direction: row;
     gap: 24px;
     margin-bottom: 40px;
-}
-.book-title {
+  }
+  .book-title {
     font-size: 24px;
     margin-bottom: 8px;
-}
+  }
 
-.book-author {
+  .book-author {
     font-size: 14px;
     margin-bottom: 20px;
-}
+  }
 
-.book-description {
+  .book-description {
     margin-bottom: 20px;
-}
+  }
 
-.add-to-list-button {
+  .add-to-list-button {
     height: 64px;
     width: 100%;
     padding: 20px 20px;
-}
+  }
 
-.button-popup-text {
-   font-size: 18px;
-}
+  .button-popup-text {
+    font-size: 18px;
+  }
 }
