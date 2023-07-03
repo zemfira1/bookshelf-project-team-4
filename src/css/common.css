@@ -72,7 +72,6 @@ html {
     border: 3px solid #FFF;
     border-radius: 50%;
     display: inline-block;
-    position: absolute;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
 }
