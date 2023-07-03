@@ -1,6 +1,7 @@
 import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { showLoader, hideLoader } from './exp-func';
+import onClickSeeMore from './all-books';
 
 const refs = {
   categoryList: document.querySelector('.js-category-block'),
@@ -46,6 +47,13 @@ async function onClickCategory(e) {
       currentCategory.classList.remove('current-category');
     }
     e.target.classList.add('current-category');
+    if (e.target.dataset.name === 'All categories') {
+      refs.books.addEventListener('click', onClickSeeMore);
+    } else {
+      if (currentCategory.dataset.name === 'All categories') {
+        refs.books.removeEventListener('click', onClickSeeMore);
+      }
+    }
   } catch (error) {
     Notify.failure(error.message);
     refs.categoryList.innerHTML = `<div>
@@ -82,9 +90,7 @@ async function addMarkupCategoryBooks() {
     const startTitle = arrTitle
       .filter((el, idx) => idx < arrTitle.length - 1)
       .join(' ');
-    console.log(startTitle);
     const endTitle = arrTitle[arrTitle.length - 1];
-    console.log(endTitle);
     refs.title.innerHTML = `${startTitle} <span class="title-color">${endTitle}</span>`;
 
     const headMarkup = `<div class="one-category"><ul class="topbooks-list">`;
