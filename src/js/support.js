@@ -8,6 +8,7 @@ import imagesupport7 from '../images/support7.png'
 import imagesupport8 from '../images/support8.png'
 import imagesupport9 from '../images/support9.png'
 
+
 const supportItems = [
   {
     title: 'Save the Children',
@@ -78,17 +79,24 @@ function createSupportListMarkup(supportItems) {
     .join("");
 }
 
+let scrollBtnDown = document.querySelector('.scroll-img-down')
+let scrollBtnUp = document.querySelector('.scroll-img-up')
+
 function scrollTo() {
   
   if (scrollBtn.classList.contains('top')) {
     scrollBtn.classList.remove('top')
+    scrollBtnUp.style.display = 'none'
+    scrollBtnDown.style.display = 'block';
     scrollTop()
   } else {
     scrollBottom()
     scrollBtn.classList.add('top')
-    scrollBtn.classList.add('hidden-scroll-support')
+    scrollBtnDown.style.display = 'none';
+    scrollBtnUp.style.display = 'block'
   }
 }
+
 
 function scrollBottom() {
   orgList.scrollTop = orgList.scrollHeight;
