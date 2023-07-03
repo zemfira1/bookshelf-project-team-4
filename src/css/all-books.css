@@ -43,6 +43,8 @@
 .btn-category{
   width: 124px;
   height: 46px;
+  color: inherit;
+  border:initial;
   border-radius: 40px;
   border-width: 2px;
   border-color: #4F2EE8;
