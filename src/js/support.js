@@ -17,7 +17,6 @@ import imagesupport7_2x from '../images/support7-2x.png'
 import imagesupport8_2x from '../images/support8-2x.png'
 import imagesupport9_2x from '../images/support9-2x.png'
 
-
 const supportItems = [
   {
     title: 'Save the Children',
