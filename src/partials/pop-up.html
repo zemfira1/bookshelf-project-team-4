@@ -1,30 +1,59 @@
 <section class="section">
-  <div class="container">
-    <div class="popup-modal-background hidden">
-      <div class="popup-modal">
-        <button class="popup-modal-close-button" type="button">
-          <svg>
-            <use href="./images/sprite.svg#icon-x-close"></use>
-          </svg>
-        </button>
-        <img class="book-image">
+  <div class="popup-modal-background hidden">
+    <div class="popup-modal">
+      <button class="popup-modal-close-button" type="button">
+        <svg width="24" height="24">
+          <use href="./images/sprite.svg#icon-x-close"></use>
+        </svg>
+      </button>
+      <div class="book-info-container">
+        <img class="book-image" />
         <div class="book-information">
-          <h3 class="book-title"></h3>
-          <h4 class="book-author"></h4>
+          <h2 class="book-title"></h2>
+          <h3 class="book-author"></h3>
           <p class="book-description"></p>
           <div class="book-store-links">
             <a class="amazon-link" target="_self">
-              <img srcset="./images/amazon-1x-min.png 1x, ./images/amazon-2x-min.png 2x" src="./images/amazon-1x-min.png" alt="Amazon Logo">
+              <img
+                class="change-color"
+                srcset="
+                  ./images/amazon-1x-min.png 1x,
+                  ./images/amazon-2x-min.png 2x
+                "
+                src="./images/amazon-1x-min.png"
+                alt="Amazon Logo"
+              />
+            </a>
+
+            <a class="applebooks-link" target="_self">
+              <img
+                class="change-color"
+                srcset="
+                  ./images/openbook-1x-min.png 1x,
+                  ./images/openbook-2x-min.png 2x
+                "
+                src="./images/openbook-1x-min.png"
+                alt="Openbook Logo"
+              />
             </a>
             <a class="bookshop-link" target="_self">
-              <img srcset="./images/bookshop-1x-min.png 1x, ./images/bookshop-2x-min.png 2x" src="./images/bookshop-1x-min.png" alt="Bookshop Logo">
-            </a>
-            <a  class="applebooks-link" target="_self">
-              <img srcset="./images/openbook-1x-min.png 1x, ./images/openbook-2x-min.png 2x" src="./images/openbook-1x-min.png" alt="Openbook Logo">
+              <img
+                class="change-color"
+                srcset="
+                  ./images/bookshop-1x-min.png 1x,
+                  ./images/bookshop-2x-min.png 2x
+                "
+                src="./images/bookshop-1x-min.png"
+                alt="Bookshop Logo"
+              />
             </a>
           </div>
         </div>
-        <button class="add-to-list-button" type="button">ADD TO SHOPING LIST</button>
+      </div>
+      <div class="button-center">
+        <button class="add-to-list-button" type="button">
+          <span class="button-popup-text">ADD TO SHOPING LIST</span>
+        </button>
       </div>
     </div>
   </div>

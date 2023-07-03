@@ -32,7 +32,7 @@ function renderBooks() {
   const emptyListImg = document.querySelector('.empty-list-img');
 
   if (savedBooks.length === 0) {
-    emptyListImg.style.display = 'block';
+    // emptyListImg.style.display = 'block';
   } else {
     const booksMarkup = savedBooks.map(book => generateBookCard(book)).join('');
     booksContainer.innerHTML = booksMarkup;
