@@ -22,7 +22,7 @@ popupModalCloseButton.addEventListener("click", closePopupModal);
 async function openPopupModal(event) {
   event.preventDefault();
   try {
-    bookData = await getBookInfo(event.target.parentNode.dataset.id);
+    bookData = await getBookInfo(event.target.parentNode.dataset.bookid);
     popupModalBackground.classList.replace("hidden", "visible");
     bookImage.setAttribute("src", bookData.book_image);
     bookImage.setAttribute("alt", bookData.title);
@@ -31,12 +31,11 @@ async function openPopupModal(event) {
     bookDescription.textContent = bookData.description;
     const amazonURL = bookData.buy_links.find((buyLink) => buyLink.name === "Amazon").url;
     const bookshopURL = bookData.buy_links.find((buyLink) => buyLink.name === "Bookshop").url;
-    //const openbookURL = bookData.buy_links.find((buyLink) => {buyLink.name === "Openbook";}).url;
+    //const openbookURL = bookData.buy_links.find((buyLink) => buyLink.name === "Openbook").url;
     amazonLink.setAttribute("href", amazonURL);
     bookshopLink.setAttribute("href", bookshopURL);
     //openbookLink.setAttribute("href", openbookURL);
     bookPresenseCheck();
-
   }
   catch {
     console.log("Error");
