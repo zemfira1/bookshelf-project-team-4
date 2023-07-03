@@ -34,17 +34,17 @@ async function addMarkupCategoryList() {
     const markUp = response
       .map(({ list_name }) => {
         return `<li class="category-item">
-      <a class="category-link" href="#">${list_name}</a></li>`;
+      <a class="category-link" href="#" data-name="${list_name}">${list_name}</a></li>`;
       })
       .join('');
     return `<ul class="category-list">
-      <li class="category-item current-category"><a class="category-link" href="#">All categories</a></li>
+      <li class="category-item current-category"><a class="category-link" href="#" data-name="All categories">All categories</a></li>
       ${markUp}
     </ul>`;
   } catch (error) {
     Notify.failure(error.message);
     return `<ul class="category-list">
-      <li class="category-item current-category"><a href="#">All categories</a></li>
+      <li class="category-item current-category"><a class="category-link" href="#" data-name="All categories">All categories</a></li>
     </ul>`;
   }
 }

@@ -4,6 +4,7 @@ import { showLoader, hideLoader } from './exp-func';
 
 const refs = {
   books: document.querySelector('.js-books'),
+  title: document.querySelector('.best-sellers'),
 };
 
 let viewportWidth = window.innerWidth;
@@ -78,6 +79,7 @@ addMarkupTopBooks()
   .then(markUp => {
     refs.books.innerHTML = markUp;
     hideLoader('.books .loader');
+    refs.books.addEventListener('click', onClickSeeMore);
   })
   .catch(error => {
     Notify.failure(error.message);
@@ -86,3 +88,72 @@ addMarkupTopBooks()
     <img src="#" alt="Empty block">
     </div>`;
   });
+
+export default async function onClickSeeMore(e) {
+  e.preventDefault();
+  if (!e.target.classList.contains('btn-category')) {
+    return;
+  }
+  try {
+    const title =
+      e.target.parentNode.parentNode.querySelector(
+        '.topbook-title'
+      ).textContent;
+
+    const arrTitle = title.split(' ');
+    const startTitle = arrTitle
+      .filter((el, idx) => idx < arrTitle.length - 1)
+      .join(' ');
+    const endTitle = arrTitle[arrTitle.length - 1];
+    refs.title.innerHTML = `${startTitle} <span class="title-color">${endTitle}</span>`;
+    const currentCategory = document.querySelector('.current-category');
+    const newCurrentCategory = document.querySelector(
+      `.category-link[data-name="${title}"]`
+    );
+    if (currentCategory) {
+      currentCategory.classList.remove('current-category');
+    }
+    newCurrentCategory.classList.add('current-category');
+    const param = `category?category=${title}`;
+    request.param = param;
+    showLoader('.books .loader');
+    const markUp = await addMarkupCategoryBooks();
+    refs.books.innerHTML = markUp;
+    hideLoader('.books .loader');
+    refs.books.removeEventListener('click', onClickSeeMore);
+  } catch (error) {
+    Notify.failure(error.message);
+    refs.categoryList.innerHTML = `<div>
+    <p>Sorry, an error occurred!</p>
+    <img src="#" alt="Empty block">
+    </div>`;
+  }
+}
+
+async function addMarkupCategoryBooks() {
+  try {
+    const response = await fetchTopBooks();
+
+    const headMarkup = `<div class="one-category"><ul class="topbooks-list">`;
+    const listBook = response
+      .map(({ _id, book_image, title, author }) => {
+        return `<li class="book-item">
+          <a class="book-item-link" href="#" data-bookid="${_id}">  
+            <img class="book-item-img" src="${book_image}" alt="${title}" loading="lazy">
+            <p class="book-title">${title}</p>
+            <p class="book-author">${author}</p>
+          </a>
+        </li>
+        `;
+      })
+      .join('');
+    const markUp = headMarkup + listBook + '</ul></div>';
+    return markUp;
+  } catch (error) {
+    Notify.failure(error.message);
+    return `<div>
+    <p>Sorry, an error occurred!</p>
+    <img src="#" alt="Empty block">
+    </div>`;
+  }
+}
