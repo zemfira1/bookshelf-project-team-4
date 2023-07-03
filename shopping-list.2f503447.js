@@ -19,4 +19,4 @@ function t(t,e,r,n){Object.defineProperty(t,e,{get:r,set:n,enumerable:!0,configu
       <button class="book-card-remove" data-bookid="${t.id}">Remove from Shopping List</button>
     </div>
   `})(t)).join("");e.innerHTML=r,n.style.display="none"}}document.addEventListener("DOMContentLoaded",n),document.addEventListener("click",function(t){if(t.target.classList.contains("book-card-remove")){let e=t.target.dataset.bookid;(function(t){let e=r(),o=e.filter(e=>e.id!==t);localStorage.setItem("shoppingList",JSON.stringify(o)),n()})(e)}})}),i.register("bUb57",function(t,e){window.addEventListener("DOMContentLoaded",function(){let t=document.querySelector('a[data-action="index"]');t.classList.add("current");let e=window.location.href;if(e.endsWith("/shopping-list.html")){t.classList.remove("current");let e=document.querySelector('a[data-action="shopping-list"]');e.classList.add("current")}})});
-//# sourceMappingURL=shopping-list.d3606367.js.map
+//# sourceMappingURL=shopping-list.2f503447.js.map
