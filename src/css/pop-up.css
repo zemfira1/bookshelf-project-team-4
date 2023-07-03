@@ -38,10 +38,6 @@
     margin-bottom: 4px;
 }
 
-.popup-modal-close-button svg {
-    height: 100%;
-    width: 100%;
-}
 .book-image{
     width: 287px;
     height: 408px;
@@ -93,10 +89,14 @@
     border-color: #4F2EE8;
     background-color: inherit;
     padding: 14px 28px;
-}
-.button-popup-text{
     font-weight: 700;
     color: inherit;
+}
+.add-to-list-button:hover,
+.add-to-list-button:focus{
+    background-color: #4F2EE8;
+    border: none;
+    color: #FFFFFF;
 }
 
 @media screen and (min-width: 768px){
@@ -108,6 +108,10 @@
     .popup-modal-close-button {
     right: 24px;
     top: 24px;
+    width: 28px;
+    height: 28px;
+}
+.svg-pop-up{
     width: 28px;
     height: 28px;
 }
@@ -138,9 +142,7 @@
     height: 64px;
     width: 100%;
     padding: 20px 20px;
-}
-
-.button-popup-text {
-   font-size: 18px;
+    font-size: 18px;
+    font-weight: 700;
 }
 }
