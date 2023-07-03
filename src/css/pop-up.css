@@ -31,6 +31,8 @@
     position: absolute;
     right: 12px;
     top: 12px;
+    width: 24px;
+    height: 24px;
     border: none;
     background-color: inherit;
     margin-bottom: 4px;
@@ -98,7 +100,11 @@
 }
 
 @media screen and (min-width: 768px){
-
+  .popup-modal{
+    width: 579px;
+    height: 465px;
+    padding: 40px;
+ }
 }
 
 @media screen and (min-width: 1440px){
