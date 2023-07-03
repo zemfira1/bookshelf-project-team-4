@@ -10,13 +10,23 @@ const bookDescription = document.querySelector(".book-description");
 const addToListButton = document.querySelector(".add-to-list-button");
 const amazonLink = document.querySelector(".amazon-link");
 const bookshopLink = document.querySelector(".bookshop-link");
-const openbookLink = document.querySelector(".openbook-link");
+const applebooksLink = document.querySelector(".applebooks-link");
 
 let bookData;
-let bookShopingList = [];
+let bookShopingList = JSON.parse(localStorage.getItem("bookShopingListLS")) || [];
 
 jsBooks.addEventListener("click", openPopupModal);
 popupModalCloseButton.addEventListener("click", closePopupModal);
+popupModalBackground.addEventListener("click", event => {
+  if (event.target.classList.contains("popup-modal-background")) {
+    closePopupModal();
+  }
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closePopupModal();
+  }
+});
 
 
 async function openPopupModal(event) {
@@ -31,11 +41,12 @@ async function openPopupModal(event) {
     bookDescription.textContent = bookData.description;
     const amazonURL = bookData.buy_links.find((buyLink) => buyLink.name === "Amazon").url;
     const bookshopURL = bookData.buy_links.find((buyLink) => buyLink.name === "Bookshop").url;
-    //const openbookURL = bookData.buy_links.find((buyLink) => buyLink.name === "Openbook").url;
+    const applebooksURL = bookData.buy_links.find((buyLink) => buyLink.name === "Apple Books").url;
     amazonLink.setAttribute("href", amazonURL);
     bookshopLink.setAttribute("href", bookshopURL);
-    //openbookLink.setAttribute("href", openbookURL);
+    applebooksLink.setAttribute("href", applebooksURL);
     bookPresenseCheck();
+
   }
   catch {
     console.log("Error");
@@ -55,6 +66,7 @@ async function getBookInfo(bookId) {
 
 
 function bookPresenseCheck() {
+  console.log(bookShopingList);
   if (bookShopingList.some((book) => book._id === bookData._id)) {
     addToListButton.removeEventListener("click", addToListFunction);
     addToListButton.addEventListener("click", removeFromListFunction);
@@ -65,13 +77,13 @@ function bookPresenseCheck() {
     addToListButton.addEventListener("click", addToListFunction);
     addToListButton.textContent = "ADD TO SHOPING LIST";
   }
+  localStorage.setItem("bookShopingListLS", JSON.stringify(bookShopingList));
 }
 
 
 function addToListFunction() {
   console.log("Added!");
   bookShopingList.push(bookData);
-  console.log(bookShopingList);
   bookPresenseCheck();
 }
 
@@ -79,7 +91,6 @@ function addToListFunction() {
 function removeFromListFunction() {
   console.log("Removed!");
   bookShopingList = bookShopingList.filter((book) => book._id !== bookData._id);
-  console.log(bookShopingList);
   bookPresenseCheck();
 }
 
