@@ -1,0 +1,30 @@
+.topbooks-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.book-item{
+    margin-bottom: 40px;
+}
+
+.book-item:last-child{
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+.topbooks-list{
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 25px;
+}
+.topbooks-list:nth-child(3n){
+    margin-right: 0;
+}
+.topbooks-list:nth-last-child(-n+3){
+margin-bottom: 0;
+}
+}
+
+@media screen and (min-width: 1440px){
+    
+}
