@@ -60,6 +60,8 @@
 .ico-burger:hover,
 .ico-burger:focus {
   stroke: rgba(79, 46, 232, 1);
+  fill: #4f2ee8;
+  color: #4f2ee8;
 }
 .main-nav-block {
   margin-left: 34px;
