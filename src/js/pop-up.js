@@ -33,8 +33,12 @@ document.addEventListener('keydown', event => {
 
 async function openPopupModal(event) {
   event.preventDefault();
+  if (!event.target.hasAttribute('data-bookid')) {
+    return;
+  }
   try {
     bookData = await getBookInfo(event.target.parentNode.dataset.bookid);
+    jsBooks.removeEventListener('click', openPopupModal);
     popupModalBackground.classList.replace('hidden', 'visible');
     bookImage.setAttribute('src', bookData.book_image);
     bookImage.setAttribute('alt', bookData.title);
@@ -61,6 +65,7 @@ async function openPopupModal(event) {
 
 function closePopupModal() {
   popupModalBackground.classList.replace('visible', 'hidden');
+  jsBooks.addEventListener('click', openPopupModal);
 }
 
 async function getBookInfo(bookId) {
