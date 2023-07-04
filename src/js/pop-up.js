@@ -77,7 +77,6 @@ async function getBookInfo(bookId) {
 }
 
 function bookPresenseCheck() {
-  console.log(bookShopingList);
   if (bookShopingList.some(book => book._id === bookData._id)) {
     addToListButton.removeEventListener('click', addToListFunction);
     addToListButton.addEventListener('click', removeFromListFunction);
@@ -93,13 +92,11 @@ function bookPresenseCheck() {
 }
 
 function addToListFunction() {
-  console.log('Added!');
   bookShopingList.push(bookData);
   bookPresenseCheck();
 }
 
 function removeFromListFunction() {
-  console.log('Removed!');
   bookShopingList = bookShopingList.filter(book => book._id !== bookData._id);
   bookPresenseCheck();
 }
