@@ -102,7 +102,9 @@
     padding: 14px 28px;
     font-weight: 700;
     color: inherit;
-
+    transition-property: background-color color border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .add-to-list-button:hover,
 .add-to-list-button:focus{
