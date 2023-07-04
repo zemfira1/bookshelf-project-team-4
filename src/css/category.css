@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .book-item{
     margin-bottom: 40px;
 }
@@ -15,7 +14,6 @@
 .topbooks-list{
     flex-wrap: wrap;
     flex-direction: row;
-    margin-right: 25px;
 }
 .topbooks-list:nth-child(3n){
     margin-right: 0;
