@@ -19,7 +19,7 @@
 .popup-modal {
   position: relative;
   width: 335px;
-  height: 762px;
+  height: auto;
   padding: 40px 24px;
   padding-top: 41px;
   background-color: #ffffff;
@@ -98,6 +98,7 @@
   flex-direction: column;
   gap: 8px;
   justify-content: center;
+  align-items: center;
 }
 
 .add-to-list-button {
@@ -123,12 +124,12 @@
 .book-adding-text{
   width: 242px;
   font-size: 10px;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
   .popup-modal {
     width: 579px;
-    height: 465px;
     padding: 40px;
     padding-top: 42px;
   }
