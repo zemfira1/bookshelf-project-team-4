@@ -1,27 +1,26 @@
-import imagesupport1 from '../images/support1.png'
-import imagesupport2 from '../images/support2.png'
-import imagesupport3 from '../images/support3.png'
-import imagesupport4 from '../images/support4.png'
-import imagesupport5 from '../images/support5.png'
-import imagesupport6 from '../images/support6.png'
-import imagesupport7 from '../images/support7.png'
-import imagesupport8 from '../images/support8.png'
-import imagesupport9 from '../images/support9.png'
-import imagesupport1_2x from '../images/support1-2x.png'
-import imagesupport2_2x from '../images/support2-2x.png'
-import imagesupport3_2x from '../images/support3-2x.png'
-import imagesupport4_2x from '../images/support4-2x.png'
-import imagesupport5_2x from '../images/support5-2x.png'
-import imagesupport6_2x from '../images/support6-2x.png'
-import imagesupport7_2x from '../images/support7-2x.png'
-import imagesupport8_2x from '../images/support8-2x.png'
-import imagesupport9_2x from '../images/support9-2x.png'
+import imagesupport1 from '../images/support1.png';
+import imagesupport2 from '../images/support2.png';
+import imagesupport3 from '../images/support3.png';
+import imagesupport4 from '../images/support4.png';
+import imagesupport5 from '../images/support5.png';
+import imagesupport6 from '../images/support6.png';
+import imagesupport7 from '../images/support7.png';
+import imagesupport8 from '../images/support8.png';
+import imagesupport9 from '../images/support9.png';
+import imagesupport1_2x from '../images/support1-2x.png';
+import imagesupport2_2x from '../images/support2-2x.png';
+import imagesupport3_2x from '../images/support3-2x.png';
+import imagesupport4_2x from '../images/support4-2x.png';
+import imagesupport5_2x from '../images/support5-2x.png';
+import imagesupport6_2x from '../images/support6-2x.png';
+import imagesupport7_2x from '../images/support7-2x.png';
+import imagesupport8_2x from '../images/support8-2x.png';
+import imagesupport9_2x from '../images/support9-2x.png';
 
 const supportItems = [
   {
     title: 'Save the Children',
-    url:
-      'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+    url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
     img: imagesupport1,
     img2x: imagesupport1_2x,
   },
@@ -75,15 +74,15 @@ const supportItems = [
   },
 ];
 
-let orgList = document.querySelector('.donation-organisation-list')
-let scrollBtn = document.querySelector('.scroll-btn')
+let orgList = document.querySelector('.donation-organisation-list');
+let scrollBtn = document.querySelector('.scroll-btn');
 
 function createSupportListMarkup(supportItems) {
   return supportItems
     .map(
-      ({ img2x, img, url, title },index) => `
+      ({ img2x, img, url, title }, index) => `
       <li class="support-item">
-      <span class='support-item-number'>0${index+1}</span>
+        <span class='support-item-number'>0${index + 1}</span>
         <a class="support_link" target='blank' href="${url}">
           <img
             class="support-image"
@@ -94,27 +93,25 @@ function createSupportListMarkup(supportItems) {
         </a>
       </li>`
     )
-    .join("");
+    .join('');
 }
 
-let scrollBtnDown = document.querySelector('.scroll-img-down')
-let scrollBtnUp = document.querySelector('.scroll-img-up')
+let scrollBtnDown = document.querySelector('.scroll-img-down');
+let scrollBtnUp = document.querySelector('.scroll-img-up');
 
 function scrollTo() {
-  
   if (scrollBtn.classList.contains('top')) {
-    scrollBtn.classList.remove('top')
-    scrollBtnUp.style.display = 'none'
+    scrollBtn.classList.remove('top');
+    scrollBtnUp.style.display = 'none';
     scrollBtnDown.style.display = 'block';
-    scrollTop()
+    scrollTop();
   } else {
-    scrollBottom()
-    scrollBtn.classList.add('top')
+    scrollBottom();
+    scrollBtn.classList.add('top');
     scrollBtnDown.style.display = 'none';
-    scrollBtnUp.style.display = 'block'
+    scrollBtnUp.style.display = 'block';
   }
 }
-
 
 function scrollBottom() {
   orgList.scrollTop = orgList.scrollHeight;
@@ -126,5 +123,3 @@ function scrollTop() {
 
 orgList.innerHTML = createSupportListMarkup(supportItems);
 scrollBtn.addEventListener('click', scrollTo);
-
-

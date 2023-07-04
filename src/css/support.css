@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 335px;
   height: 352px;
+  margin-bottom: 40px;
   border-radius: 16px;
   background: rgb(79, 46, 232);
   background: linear-gradient(180deg, rgba(79, 46, 232, 1) 0%, rgba(255, 255, 255, 1) 130%);
@@ -27,6 +28,8 @@
 .support-item{
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  gap: 16px;
   align-items: center;
 }
 .support-item:not(:last-child) {
@@ -40,7 +43,6 @@
     line-height: 18px;
     letter-spacing: -0.04em;
     color:white;
-    margin-right:16px;
 }
 .support-image{
   height: 42px;
@@ -86,6 +88,7 @@
 @media screen and (min-width: 768px) {
   .container-support {
     height: 472px;
+    margin-bottom: 0;
   }
   .support-title-div {
     margin-top: 16px;
