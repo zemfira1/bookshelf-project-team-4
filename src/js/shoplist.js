@@ -21,7 +21,7 @@ function generateBookCard(book) {
       <p class="book-card-description">${description}</p>
       <p class="book-card-author">Author: ${author}</p>
       <div class="book-card-links">${linksMarkup}</div>
-      <button class="book-card-remove" data-bookid="${book.id}">Remove from Shopping List</button>
+      <button class="book-card-remove" data-bookid="${book._id}">Remove from Shopping List</button>
     </div>
   `;
 }
@@ -29,10 +29,10 @@ function generateBookCard(book) {
 function renderBooks() {
   const savedBooks = getSavedBooks();
   const booksContainer = document.querySelector('.js-books-container');
-  const emptyListImg = document.querySelector('.empty-list-img');
+  const emptyListImg = document.querySelector('.empty-shopping-list');
 
   if (savedBooks.length === 0) {
-    // emptyListImg.style.display = 'block';
+    emptyListImg.style.display = 'block';
   } else {
     const booksMarkup = savedBooks.map(book => generateBookCard(book)).join('');
     booksContainer.innerHTML = booksMarkup;
@@ -49,7 +49,7 @@ function handleRemoveBook(event) {
 
 function removeBookFromList(bookId) {
   const savedBooks = getSavedBooks();
-  const updatedBooks = savedBooks.filter(book => book.id !== bookId);
+  const updatedBooks = savedBooks.filter(book => book._id !== bookId);
   localStorage.setItem('shoppingList', JSON.stringify(updatedBooks));
   renderBooks();
 }
