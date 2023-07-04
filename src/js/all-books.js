@@ -2,6 +2,8 @@ import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { showLoader, hideLoader } from './exp-func';
 
+const STORAGE_KEY_TOP_BOOKS = 'top-books-response';
+
 const refs = {
   books: document.querySelector('.js-books'),
   title: document.querySelector('.best-sellers'),
@@ -18,8 +20,40 @@ if (viewportWidth >= 1440) {
   countColumn = 1;
 }
 
+window.addEventListener('resize', () => {
+  let countCard = countColumn;
+  if (window.innerWidth <= 767 && countCard !== 1) {
+    countColumn = 1;
+    if (refs.title.textContent.trim() === 'Best Sellers Books') {
+      changeMarkUp(countColumn);
+    }
+    return;
+  }
+  if (
+    window.innerWidth >= 768 &&
+    window.innerWidth <= 1439 &&
+    countCard !== 3
+  ) {
+    countColumn = 3;
+    if (refs.title.textContent.trim() === 'Best Sellers Books') {
+      changeMarkUp(countColumn);
+    }
+    return;
+  }
+  if (window.innerWidth >= 1440 && countCard !== 5) {
+    countColumn = 5;
+    if (refs.title.textContent.trim() === 'Best Sellers Books') {
+      changeMarkUp(countColumn);
+    }
+    return;
+  }
+  return;
+});
+
 const request = new BookShelf();
 request.param = 'top-books';
+
+innerMarkUp(countColumn);
 
 async function fetchTopBooks() {
   try {
@@ -41,21 +75,37 @@ async function fetchTopBooks() {
 
 async function addMarkupTopBooks() {
   try {
+    showLoader('.books .loader');
     const response = await fetchTopBooks();
+    sessionStorage.setItem(STORAGE_KEY_TOP_BOOKS, JSON.stringify(response));
+    hideLoader('.books .loader');
+  } catch (error) {
+    Notify.failure(error.message);
+    return `<div class="error-block">
+    <p>Sorry, an error occurred!</p>
+    <img src="#" alt="Empty block">
+    </div>`;
+  }
+}
+
+async function createMarkUpTopBooks(countCard) {
+  try {
+    await addMarkupTopBooks();
+    const response = JSON.parse(sessionStorage.getItem(STORAGE_KEY_TOP_BOOKS));
 
     const markUp = response
       .map(({ list_name, books }) => {
         const title = `<div class="one-category"><h2 class="topbook-title">${list_name}</h2><ul class="topbooks-list">`;
         let itemBook = '';
-        for (let i = 0; i < countColumn; i += 1) {
+        for (let i = 0; i < countCard; i += 1) {
           itemBook += `<li class="book-item">
-          <a class="book-item-link" href="#" data-bookid="${books[i]._id}">  
-            <img class="book-item-img" src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
-            <p class="book-title">${books[i].title}</p>
-            <p class="book-author">${books[i].author}</p>
-          </a>
-        </li>
-        `;
+            <a class="book-item-link" href="#" data-bookid="${books[i]._id}">
+              <img class="book-item-img" src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
+              <p class="book-title">${books[i].title}</p>
+              <p class="book-author">${books[i].author}</p>
+            </a>
+          </li>
+          `;
         }
         const markUp =
           title +
@@ -67,27 +117,53 @@ async function addMarkupTopBooks() {
     return markUp;
   } catch (error) {
     Notify.failure(error.message);
-    return `<div>
+    return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
   }
 }
 
-showLoader('.books .loader');
-addMarkupTopBooks()
-  .then(markUp => {
+async function innerMarkUp(countCard) {
+  try {
+    const markUp = await createMarkUpTopBooks(countCard);
     refs.books.innerHTML = markUp;
-    hideLoader('.books .loader');
     refs.books.addEventListener('click', onClickSeeMore);
-  })
-  .catch(error => {
+  } catch (error) {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = `<div>
+    refs.categoryList.innerHTML = `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
-  });
+  }
+}
+
+function changeMarkUp(countCard) {
+  const arrBooks = JSON.parse(sessionStorage.getItem(STORAGE_KEY_TOP_BOOKS));
+
+  const markUp = arrBooks
+    .map(({ list_name, books }) => {
+      const title = `<div class="one-category"><h2 class="topbook-title">${list_name}</h2><ul class="topbooks-list">`;
+      let itemBook = '';
+      for (let i = 0; i < countCard; i += 1) {
+        itemBook += `<li class="book-item">
+            <a class="book-item-link" href="#" data-bookid="${books[i]._id}">
+              <img class="book-item-img" src="${books[i].book_image}" alt="${books[i].title}" loading="lazy">
+              <p class="book-title">${books[i].title}</p>
+              <p class="book-author">${books[i].author}</p>
+            </a>
+          </li>
+          `;
+      }
+      const markUp =
+        title +
+        itemBook +
+        '</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div></div>';
+      return markUp;
+    })
+    .join('');
+  refs.books.innerHTML = markUp;
+}
 
 export default async function onClickSeeMore(e) {
   e.preventDefault();
@@ -123,7 +199,7 @@ export default async function onClickSeeMore(e) {
     refs.books.removeEventListener('click', onClickSeeMore);
   } catch (error) {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = `<div>
+    refs.categoryList.innerHTML = `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
@@ -151,9 +227,11 @@ async function addMarkupCategoryBooks() {
     return markUp;
   } catch (error) {
     Notify.failure(error.message);
-    return `<div>
+    return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
   }
 }
+
+export { countColumn };
