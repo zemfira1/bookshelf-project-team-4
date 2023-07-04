@@ -95,8 +95,6 @@
 
 .button-center {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
   justify-content: center;
 }
 
@@ -119,10 +117,6 @@
   background-color: #4f2ee8;
   border: none;
   color: #ffffff;
-}
-.book-adding-text{
-  width: 242px;
-  font-size: 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -172,8 +166,4 @@
     font-size: 18px;
     font-weight: 700;
   }
-    .book-adding-text {
-      width: 324px;
-      font-size: 12px;
-    }
 }

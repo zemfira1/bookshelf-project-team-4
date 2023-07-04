@@ -42,6 +42,7 @@
 .book-card-footer{
   display: flex;
   justify-content: space-between;
+  gap: ;
 }
 .book-card-image{
   width: 100px;
