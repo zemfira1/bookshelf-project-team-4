@@ -40,6 +40,9 @@
 .popup-modal-close {
   stroke: currentColor;
   fill: currentColor;
+  transition-property: fill stroke color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .popup-modal-close:hover,
 .popup-modal-close:focus {
@@ -59,7 +62,7 @@
   flex-direction: column;
   gap: 14px;
 }
-.book-title {
+.book-title-pop {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 4px;
@@ -118,6 +121,7 @@
     width: 579px;
     height: 465px;
     padding: 40px;
+    padding-top: 42px;
   }
   .popup-modal-close-button {
     right: 24px;
@@ -138,7 +142,7 @@
     gap: 24px;
     margin-bottom: 40px;
   }
-  .book-title {
+  .book-title-pop{
     font-size: 24px;
     margin-bottom: 8px;
   }
