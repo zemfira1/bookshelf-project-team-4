@@ -51,11 +51,11 @@
   color: #4f2ee8;
 }
 
-.book-image{
-    width: 287px;
-    height: 408px;
-    border-radius: 8px;
-    border: none;
+.book-image {
+  width: 287px;
+  height: 408px;
+  border-radius: 8px;
+  border: none;
 }
 .book-info-container {
   display: flex;
@@ -86,34 +86,43 @@
   width: 173px;
   height: 36px;
 }
-/* .change-color{
-    color: #ffffff;
-    filter: brightness()invert(1);
+.change-color {
+  filter: grayscale();
+}
+/* .add-hover {
+  background: url(../images/amazon-2x-min.png);
+  background-size: cover;
 } */
+.add-hover:hover {
+  /* background-image: url(../images/amazon-hover-2x-min.png); */
+  /* background-size: cover; */
+  /* lightgray: 0.741px 0px / 97.61% 100% no-repeat; */
+  /* box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15); */
+}
 .button-center {
   display: flex;
   justify-content: center;
 }
 
-.add-to-list-button{
-    height: 46px;
-    width: auto;
-    border: 2px solid;
-    border-radius: 40px;
-    border-color: #4F2EE8;
-    background-color: inherit;
-    padding: 14px 28px;
-    font-weight: 700;
-    color: inherit;
-    transition-property: background-color color border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.add-to-list-button {
+  height: 46px;
+  width: auto;
+  border: 2px solid;
+  border-radius: 40px;
+  border-color: #4f2ee8;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-weight: 700;
+  color: inherit;
+  transition-property: background-color color border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .add-to-list-button:hover,
-.add-to-list-button:focus{
-    background-color: #4F2EE8;
-    border: none;
-    color: #FFFFFF;
+.add-to-list-button:focus {
+  background-color: #4f2ee8;
+  border: none;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -128,12 +137,12 @@
     top: 24px;
     width: 28px;
     height: 28px;
-}
-.svg-pop-up{
+  }
+  .svg-pop-up {
     width: 28px;
     height: 28px;
-}
-.book-image {
+  }
+  .book-image {
     width: 192px;
     height: 281px;
   }
@@ -142,7 +151,7 @@
     gap: 24px;
     margin-bottom: 40px;
   }
-  .book-title-pop{
+  .book-title-pop {
     font-size: 24px;
     margin-bottom: 8px;
   }
@@ -162,5 +171,5 @@
     padding: 20px 20px;
     font-size: 18px;
     font-weight: 700;
-}
+  }
 }
