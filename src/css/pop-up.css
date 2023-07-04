@@ -86,10 +86,19 @@
   width: 173px;
   height: 36px;
 }
-/* .change-color{
-    color: #ffffff;
-    filter: brightness()invert(1);
+.change-color {
+  filter: grayscale();
+}
+/* .add-hover {
+  background: url(../images/amazon-2x-min.png);
+  background-size: cover;
 } */
+.add-hover:hover {
+  /* background-image: url(../images/amazon-hover-2x-min.png); */
+  /* background-size: cover; */
+  /* lightgray: 0.741px 0px / 97.61% 100% no-repeat; */
+  /* box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15); */
+}
 .button-center {
   display: flex;
   justify-content: center;
