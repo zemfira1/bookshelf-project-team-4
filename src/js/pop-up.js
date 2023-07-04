@@ -9,10 +9,11 @@ const bookImage = document.querySelector('.book-image');
 const bookTitle = document.querySelector('.book-title-pop');
 const bookAuthor = document.querySelector('.book-author');
 const bookDescription = document.querySelector('.book-description');
-const addToListButton = document.querySelector('.add-to-list-button');
 const amazonLink = document.querySelector('.amazon-link');
 const bookshopLink = document.querySelector('.bookshop-link');
 const applebooksLink = document.querySelector('.applebooks-link');
+const addToListButton = document.querySelector('.add-to-list-button');
+const bookAddingText = document.querySelector(".book-adding-text");
 
 let bookData;
 let bookShopingList =
@@ -81,10 +82,12 @@ function bookPresenseCheck() {
     addToListButton.removeEventListener('click', addToListFunction);
     addToListButton.addEventListener('click', removeFromListFunction);
     addToListButton.textContent = 'REMOVE FROM SHOPING LIST';
+    bookAddingText.classList.replace('hidden', 'visible');
   } else {
     addToListButton.removeEventListener('click', removeFromListFunction);
     addToListButton.addEventListener('click', addToListFunction);
     addToListButton.textContent = 'ADD TO SHOPING LIST';
+    bookAddingText.classList.replace('visible', 'hidden');
   }
   localStorage.setItem('bookShopingListLS', JSON.stringify(bookShopingList));
 }
