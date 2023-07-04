@@ -63,5 +63,5 @@ let t;var o="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?s
         `;let n=i+a+'</ul><div class="btn-div" ><button type="button" class="btn-category" data-open-category>see more</button></div></div>';return n}).join("");return e}catch(t){return(0,s.Notify).failure(t.message),`<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
-    </div>`}}a("c4xQB"),a("lVc5g"),a("bUb57");
-//# sourceMappingURL=index.612aaf4e.js.map
+    </div>`}}a("c4xQB"),a("bUb57");
+//# sourceMappingURL=index.86ae4eb1.js.map
