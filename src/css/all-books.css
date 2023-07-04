@@ -87,17 +87,17 @@
 #btnToTop {
   position: absolute;
   bottom: 120px;
-  right: 0;
+  right: 4px;
   width: 54px;
   height: 54px;
 }
 .pos-scroll {
   position: relative;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 }
 .scroll-to-up {
-  width: 24px;
-  height: 24px;
+  width: 54px;
+  height: 54px;
   border: none;
   background: transparent;
   align-self: center;
