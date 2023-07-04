@@ -2,23 +2,13 @@ import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { showLoader, hideLoader } from './exp-func';
 import onClickSeeMore from './all-books';
+import { countColumn } from './all-books';
 
 const refs = {
   categoryList: document.querySelector('.js-category-block'),
   books: document.querySelector('.js-books'),
   title: document.querySelector('.best-sellers'),
 };
-
-let viewportWidth = window.innerWidth;
-let countColumn;
-
-if (viewportWidth >= 1440) {
-  countColumn = 5;
-} else if (viewportWidth >= 768) {
-  countColumn = 3;
-} else {
-  countColumn = 1;
-}
 
 refs.categoryList.addEventListener('click', onClickCategory);
 
@@ -30,33 +20,35 @@ async function onClickCategory(e) {
     return;
   }
   try {
+    const currentCategory = e.currentTarget.querySelector('.current-category');
     const param =
       e.target.textContent === 'All categories'
         ? 'top-books'
         : `category?category=${e.target.textContent}`;
-    const currentCategory = e.currentTarget.querySelector('.current-category');
     request.param = param;
     showLoader('.books .loader');
+
     const markUp =
       param === 'top-books'
         ? await addMarkupTopBooks()
         : await addMarkupCategoryBooks();
     refs.books.innerHTML = markUp;
     hideLoader('.books .loader');
+
     if (currentCategory) {
       currentCategory.classList.remove('current-category');
     }
+
     e.target.classList.add('current-category');
+
     if (e.target.dataset.name === 'All categories') {
       refs.books.addEventListener('click', onClickSeeMore);
     } else {
-      if (currentCategory.dataset.name === 'All categories') {
-        refs.books.removeEventListener('click', onClickSeeMore);
-      }
+      refs.books.removeEventListener('click', onClickSeeMore);
     }
   } catch (error) {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = `<div>
+    refs.categoryList.innerHTML = `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
@@ -110,7 +102,7 @@ async function addMarkupCategoryBooks() {
     return markUp;
   } catch (error) {
     Notify.failure(error.message);
-    return `<div>
+    return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;
@@ -147,7 +139,7 @@ async function addMarkupTopBooks() {
     return markUp;
   } catch (error) {
     Notify.failure(error.message);
-    return `<div>
+    return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
     <img src="#" alt="Empty block">
     </div>`;

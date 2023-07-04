@@ -8,6 +8,19 @@
   background: #fff;
   z-index: 9999;
 }
+.nav-burger {
+  fill: currentColor;
+  stroke: currentColor;
+  transition-property: fill stroke color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-burger:hover,
+.nav-burger:focus {
+  fill: #4f2ee8;
+  stroke: #4f2ee8;
+  color: #4f2ee8;
+}
 
 .burger-menu.show {
   display: block;
@@ -20,6 +33,8 @@
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   background: #fff;
+  position: relative;
+  z-index: 3;
 }
 .nav-list-menu {
   display: flex;
@@ -32,6 +47,7 @@
   gap: 14px;
 }
 .menu-main-part {
+  position: relative;
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     #4f2ee8 18.03%,
@@ -43,9 +59,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   top: -8px;
-  z-index: -2;
 }
 
 .menu-name {
@@ -80,14 +94,14 @@
 }
 .nav-link-menu {
   color: #fff;
-  font-size: 14px;
   font-weight: 500;
-  line-height: 1.29;
+  font-size: 14px;
   letter-spacing: -0.56px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   border-radius: 36px;
+  line-height: 18px;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,7 +121,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
-  padding: 183px 125px;
+  padding: 183px 123px;
 }
 
 .logout-button {
@@ -125,32 +139,31 @@
   width: 118px;
   height: 48px;
   flex-shrink: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  position: relative;
+  z-index: 5;
+}
+.logout-container {
   position: absolute;
   bottom: 54px;
   left: 0;
   margin: 20px;
-  display: flex;
-  align-items: center;
-  padding-left: 24px;
-  z-index: 2;
-}
-.logout-container {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-wrap: nowrap;
-  padding: 24px 15px;
+  z-index: 4;
 }
 .swg-shopping {
   fill: white;
 }
 .overlay-image {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   z-index: 1;
 }
+
 /* @media screen and (min-width: 768px) {
   .menu-main-part {
     display: none;

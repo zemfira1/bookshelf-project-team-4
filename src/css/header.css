@@ -56,10 +56,15 @@
 
 .ico-burger {
   stroke: currentColor;
+  transition-property: fill stroke color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .ico-burger:hover,
 .ico-burger:focus {
   stroke: rgba(79, 46, 232, 1);
+  fill: #4f2ee8;
+  color: #4f2ee8;
 }
 .main-nav-block {
   margin-left: 34px;
