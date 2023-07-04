@@ -8,6 +8,16 @@
   background: #fff;
   z-index: 9999;
 }
+.nav-burger {
+  fill: currentColor;
+  stroke: currentColor;
+}
+.nav-burger:hover,
+.nav-burger:focus {
+  fill: #4f2ee8;
+  stroke: #4f2ee8;
+  color: #4f2ee8;
+}
 
 .burger-menu.show {
   display: block;
