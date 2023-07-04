@@ -1,3 +1,4 @@
+// switcher dark/light themes
 (function (window, document, undefined) {
     
     let darkMode = localStorage.getItem('my_darkMode');

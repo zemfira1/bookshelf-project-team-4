@@ -83,3 +83,25 @@
     height: 256px;
   }
 }
+/* style btn to scroll up */
+#btnToTop {
+  position: absolute;
+  bottom: 120px;
+  right: 0;
+}
+.pos-scroll {
+  position: relative;
+}
+.scroll-to-up {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  align-self: center;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  #btnToTop {
+    display: none;
+  }
+}
