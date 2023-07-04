@@ -34,7 +34,7 @@ document.addEventListener('keydown', event => {
 
 async function openPopupModal(event) {
   event.preventDefault();
-  if (!event.target.hasAttribute('data-bookid')) {
+  if (!event.target.parentNode.hasAttribute('data-bookid')) {
     return;
   }
   try {
