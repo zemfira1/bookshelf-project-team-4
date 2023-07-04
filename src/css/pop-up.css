@@ -34,7 +34,7 @@
   width: 24px;
   height: 24px;
   border: none;
-  background-color: inherit;
+  background-color: transparent;
   margin-bottom: 4px;
 }
 .popup-modal-close {

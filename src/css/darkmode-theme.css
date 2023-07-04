@@ -35,3 +35,18 @@
 .darkmode .empty-shopping-list-msg {
   color: #ffffff;
 }
+.darkmode .popup-modal {
+  background-color: #202024;
+}
+.darkmode .popup-modal-close {
+  color: #ffffff;
+}
+.darkmode .book-title-pop {
+  color: #ffffff;
+}
+.darkmode .book-information {
+  color: #ffffff;
+}
+.darkmode .add-to-list-button {
+  color: #ffffff;
+}
