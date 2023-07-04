@@ -88,9 +88,12 @@
   position: absolute;
   bottom: 120px;
   right: 0;
+  width: 54px;
+  height: 54px;
 }
 .pos-scroll {
   position: relative;
+  padding-bottom: 40px;
 }
 .scroll-to-up {
   width: 24px;
