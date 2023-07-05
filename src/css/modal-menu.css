@@ -110,7 +110,7 @@
 .nav-link-menu:focus,
 .nav-link-menu.current {
   background-color: #eac645;
-  color: black;
+  color: #111111;
 }
 .shopping-bag-menu {
   margin-left: 4px;
@@ -118,7 +118,7 @@
 
 .swg.shopping-bag.swg-shopping:hover,
 .swg.shopping-bag.swg-shopping:focus {
-  fill: black;
+  fill: #111111;
   transform: scale(1.2);
 }
 .name-menu-home:hover,
@@ -168,7 +168,7 @@
   z-index: 4;
 }
 .swg-shopping {
-  fill: white;
+  fill: #fff;
 }
 .overlay-image {
   position: absolute;
