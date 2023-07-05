@@ -4,6 +4,7 @@ import openbook1x from '../images/openbook-1x-min.png';
 import openbook2x from '../images/openbook-2x-min.png';
 import bookshop1x from '../images/bookshop-1x-min.png';
 import bookshop2x from '../images/bookshop-2x-min.png';
+import button from '../images/trash-03.png';
 
 const amazonLink = document.querySelector('.amazon-link');
 const bookshopLink = document.querySelector('.bookshop-link');
@@ -29,9 +30,7 @@ function generateBookCard(book) {
         <p class="book-card-category">${list_name}</p>
       </div>
       <button class="book-card-remove" data-bookid="${_id}">
-        <svg class="book-card-remove-icon" data-bookid="${_id}" width="28" height="28">
-          <use href="./images/sprite.svg#icon-trash-shop"></use>
-        </svg>
+        <img class="button-trash" src="${button}" alt="trash" />
       </button>
     </div>
     <p class="book-card-description">${description}</p>

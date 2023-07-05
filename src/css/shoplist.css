@@ -114,6 +114,7 @@
 
 .book-card-remove {
   position: absolute;
+  padding: 6px;
   right: 14px;
   top: 14px;
   width: 28px;
