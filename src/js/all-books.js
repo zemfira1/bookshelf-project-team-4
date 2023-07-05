@@ -1,6 +1,7 @@
 import BookShelf from './bookshelf-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { showLoader, hideLoader } from './exp-func';
+import iconUp from '../images/sprite.svg';
 
 const STORAGE_KEY_TOP_BOOKS = 'top-books-response';
 
@@ -13,7 +14,7 @@ const refs = {
 const markUpBtnScroll = `<button id="btnToTop" class="scroll-btn scrollToTop">
     <a href="#top">
       <svg class="scroll-to-up" width="54" height="54">
-        <use href="./images/sprite.svg#icon-up"></use>
+        <use href="${iconUp}#icon-up"></use>
       </svg>
     </a>
   </button>
