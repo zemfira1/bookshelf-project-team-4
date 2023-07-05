@@ -29,8 +29,8 @@ function generateBookCard(book) {
         <p class="book-card-category">${list_name}</p>
       </div>
       <button class="book-card-remove" data-bookid="${_id}">
-        <svg class="book-card-remove-icon" width="28" height="28">
-          <use href="/sprite.f14d31f7.svg#icon-trash-03"></use>
+        <svg class="book-card-remove-icon" data-bookid="${_id}" width="28" height="28">
+          <use href="./images/sprite.svg#icon-trash"></use>
         </svg>
       </button>
     </div>
@@ -38,7 +38,9 @@ function generateBookCard(book) {
     <div class="book-card-footer">
       <p class="book-card-author">Author: ${author}</p>
       <div class="book-card-links">
-        <a class="amazon-link" target="_blank">
+        <a class="amazon-link" target="_blank" href="${
+          buy_links.find(buyLink => buyLink.name === 'Amazon').url
+        }">
               <img
                 class="change-color add-hover"
                 srcset="
@@ -49,7 +51,9 @@ function generateBookCard(book) {
                 alt="Amazon Logo"
               />
             </a>
-            <a class="applebooks-link" target="_blank">
+            <a class="applebooks-link" target="_blank" href="${
+              buy_links.find(buyLink => buyLink.name === 'Apple Books').url
+            }">
               <img
                 class="change-color"
                 srcset="
@@ -60,7 +64,9 @@ function generateBookCard(book) {
                 alt="Openbook Logo"
               />
             </a>
-            <a class="bookshop-link" target="_blank">
+            <a class="bookshop-link" target="_blank" href="${
+              buy_links.find(buyLink => buyLink.name === 'Bookshop').url
+            }">
               <img
                 class="change-color"
                 srcset="
@@ -93,8 +99,13 @@ function renderBooks() {
 }
 
 function handleRemoveBook(event) {
-  if (event.target.classList.contains('book-card-remove')) {
+  console.log(event.target);
+  if (
+    event.target.classList.contains('book-card-remove') ||
+    event.target.classList.contains('book-card-remove-icon')
+  ) {
     const bookId = event.target.getAttribute('data-bookid');
+    console.log(bookId);
     removeBookFromList(bookId);
   }
 }

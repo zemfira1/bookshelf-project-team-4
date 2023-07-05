@@ -7,7 +7,17 @@ const STORAGE_KEY_TOP_BOOKS = 'top-books-response';
 const refs = {
   books: document.querySelector('.js-books'),
   title: document.querySelector('.best-sellers'),
+  section: document.querySelector('.section.pos-scroll'),
 };
+
+const markUpBtnScroll = `<button id="btnToTop" class="scroll-btn scrollToTop">
+    <a href="#top">
+      <svg class="scroll-to-up" width="54" height="54">
+        <use href="./images/sprite.svg#icon-up"></use>
+      </svg>
+    </a>
+  </button>
+`;
 
 let viewportWidth = window.innerWidth;
 let countColumn;
@@ -83,8 +93,7 @@ async function addMarkupTopBooks() {
     Notify.failure(error.message);
     return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
-    <img src="#" alt="Empty block">
-    </div>`;
+    <img src="./images/crash.jpg" alt="Empty block"  width="360" height="300">    </div>`;
   }
 }
 
@@ -119,8 +128,7 @@ async function createMarkUpTopBooks(countCard) {
     Notify.failure(error.message);
     return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
-    <img src="#" alt="Empty block">
-    </div>`;
+    <img src="./images/crash.jpg" alt="Empty block"  width="360" height="300">    </div>`;
   }
 }
 
@@ -128,13 +136,13 @@ async function innerMarkUp(countCard) {
   try {
     const markUp = await createMarkUpTopBooks(countCard);
     refs.books.innerHTML = markUp;
+    refs.section.insertAdjacentHTML('beforeend', markUpBtnScroll);
     refs.books.addEventListener('click', onClickSeeMore);
   } catch (error) {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = `<div class="error-block">
+    refs.books.innerHTML = `<div class="error-block">
     <p>Sorry, an error occurred!</p>
-    <img src="#" alt="Empty block">
-    </div>`;
+    <img src="./images/crash.jpg" alt="Empty block"  width="360" height="300">    </div>`;
   }
 }
 
@@ -199,10 +207,9 @@ export default async function onClickSeeMore(e) {
     refs.books.removeEventListener('click', onClickSeeMore);
   } catch (error) {
     Notify.failure(error.message);
-    refs.categoryList.innerHTML = `<div class="error-block">
+    refs.books.innerHTML = `<div class="error-block">
     <p>Sorry, an error occurred!</p>
-    <img src="#" alt="Empty block">
-    </div>`;
+    <img src="./images/crash.jpg" alt="Empty block"  width="360" height="300">    </div>`;
   }
 }
 
@@ -229,8 +236,7 @@ async function addMarkupCategoryBooks() {
     Notify.failure(error.message);
     return `<div class="error-block">
     <p>Sorry, an error occurred!</p>
-    <img src="#" alt="Empty block">
-    </div>`;
+    <img src="./images/crash.jpg" alt="Empty block"  width="360" height="300">    </div>`;
   }
 }
 
