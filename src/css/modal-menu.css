@@ -92,15 +92,16 @@
 }
 .nav-link-menu {
   color: #fff;
-  font-weight: 500;
   font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
   letter-spacing: -0.56px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  padding: 8px 16px;
   border-radius: 36px;
-  line-height: 18px;
-  transition-property: background-color;
+  transition-property: background-color, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -108,10 +109,21 @@
 .nav-link-menu:hover,
 .nav-link-menu:focus,
 .nav-link-menu.current {
-  background: #eac645;
+  background-color: #eac645;
+  color: #111111;
 }
 .shopping-bag-menu {
   margin-left: 4px;
+}
+
+.swg.shopping-bag.swg-shopping:hover,
+.swg.shopping-bag.swg-shopping:focus {
+  fill: #111111;
+  transform: scale(1.2);
+}
+.name-menu-home:hover,
+.name-menu-home:focus {
+  background: #eac645;
 }
 .menu-nav-main {
   display: flex;
@@ -156,7 +168,7 @@
   z-index: 4;
 }
 .swg-shopping {
-  fill: white;
+  fill: #fff;
 }
 .overlay-image {
   position: absolute;
@@ -166,9 +178,3 @@
   display: block;
   max-height: calc(100% - 215px);
 }
-
-/* @media screen and (min-width: 768px) {
-  .burger-menu {
-    display: none;
-  }
-} */
