@@ -5,5 +5,4 @@ import './js/support';
 import './js/all-books';
 import './js/category-books';
 import './js/pop-up';
-//import './js/shoplist';
 import './js/header';
