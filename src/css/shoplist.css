@@ -70,6 +70,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.book-card-remove-icon{
+  z-index: 5;
+}
 .book-card-description {
   width: 193px;
   height: 68px;
