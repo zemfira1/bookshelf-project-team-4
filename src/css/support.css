@@ -54,7 +54,7 @@
   color: white;
 }
 .support-image {
-  height: 30px;
+  height: 100%;
   color: #ffffff;
   filter: brightness(0) invert(1);
 }

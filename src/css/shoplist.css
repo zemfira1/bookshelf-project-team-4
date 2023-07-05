@@ -97,20 +97,20 @@
   align-items: center;
 }
 
-.img-shoplist-cards {
-  filter: grayscale(1);
+/* .img-shoplist-cards {
+  
   height: 16px;
   width: 16px;
 }
 .img-shoplist-cards-amazon {
-  filter: grayscale(1);
+  
   height: 11px;
   width: 32px;
 }
 .img-shoplist-cards:hover,
 .img-shoplist-cards:focus {
   filter: grayscale(1) drop-shadow(0 3px 3px #0003);
-}
+} */
 
 .book-card-remove {
   position: absolute;
@@ -135,7 +135,7 @@
   .empty-shopping-list-div {
     width: 349px;
     padding-top: 100px;
-    padding-inline: auto;
+    /* padding-inline: auto; */
     margin-inline: auto;
   }
 
@@ -166,7 +166,7 @@
   .book-card-description {
     width: 508px;
     height: 53px;
-    white-space: wrap;
+    /* white-space: wrap; */
     margin-bottom: 24px;
 
   }
@@ -187,14 +187,14 @@
   .book-card-author {
     width: auto;
   }
-  .img-shoplist-cards {
+  /* .img-shoplist-cards {
     height: 30px;
     width: 32px;
   }
   .img-shoplist-cards-amazon {
     height: 15px;
     width: 48px;
-  }
+  } */
   .book-card-remove {
     right: 24px;
     top: 24px;

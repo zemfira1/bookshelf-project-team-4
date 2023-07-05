@@ -11,8 +11,8 @@
   height: 228px;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  scrollbar-color: #E0E0E0;
-  scrollbar-width: 8px;
+  /* scrollbar-color: #fff;
+  scrollbar-width: 8px; */
   display: flex;
   flex-direction: column;
 }
