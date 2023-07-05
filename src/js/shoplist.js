@@ -42,7 +42,7 @@ function generateBookCard(book) {
           buy_links.find(buyLink => buyLink.name === 'Amazon').url
         }">
               <img
-                class="change-color add-hover"
+                class="change-color fix-amazon add-hover"
                 srcset="
                   ${amazon1x} 1x,
                   ${amazon2x} 2x

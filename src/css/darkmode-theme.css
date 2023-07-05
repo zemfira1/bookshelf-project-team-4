@@ -50,3 +50,18 @@
 .darkmode .add-to-list-button {
   color: #ffffff;
 }
+.darkmode .book-adding-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+.darkmode .book-card-title {
+  color: #ffffff;
+}
+.darkmode .book-card-description {
+  color: #ffffff;
+}
+.darkmode .fix-amazon {
+  stroke: #ffffff;
+  fill: #ffffff;
+  color: #ffffff;
+  filter: brightness(0) invert(1);
+}
