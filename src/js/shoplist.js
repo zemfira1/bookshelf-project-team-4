@@ -1,3 +1,10 @@
+import amazon1x from '../images/amazon-1x-min.png';
+import amazon2x from '../images/amazon-2x-min.png';
+import openbook1x from '../images/openbook-1x-min.png';
+import openbook2x from '../images/openbook-2x-min.png';
+import bookshop1x from '../images/bookshop-1x-min.png';
+import bookshop2x from '../images/bookshop-2x-min.png';
+
 function getSavedBooks() {
   const savedBooks = localStorage.getItem('bookShopingListLS');
   if (savedBooks) {
@@ -48,30 +55,42 @@ function generateBookCard(book) {
     <p class="book-card-description">${description}</p>
     <div class="book-card-footer">
       <p class="book-card-author">Author: ${author}</p>
-      <ul class="book-card-links">
-        <li class="book-card-item">
-          <a class="book-card-link" href="${
-            buy_links.find(buyLink => buyLink.name === 'Amazon').url
-          }">
-            <img src="./images/amazon-1x-min.png" alt="icon" srcset="" />
-          </a>
-        </li>
-        <li class="book-card-item">
-          <a class="book-card-link" href="${
-            buy_links.find(buyLink => buyLink.name === 'Apple Books').url
-          }">
-            <img src="./images/openbook-1x-min.png" alt="icon" srcset="" />
-          </a>
-        </li>
-        <li class="book-card-item">
-          <a class="book-card-link" href="${
-            buy_links.find(buyLink => buyLink.name === 'Bookshop').url
-          }">
-            <img src="./images/bookshop-1x-min.png" alt="icon" srcset="" />
-          </a>
-        </li>
+      <div class="book-card-links">
+        <a class="amazon-link" href="#">
+              <img
+                class="change-color add-hover"
+                srcset="
+                  ${amazon1x} 1x,
+                  ${amazon2x} 2x
+                "
+                src="${amazon1x}"
+                alt="Amazon Logo"
+              />
+            </a>
+            <a class="applebooks-link" href="#">
+              <img
+                class="change-color"
+                srcset="
+                  ${openbook1x} 1x,
+                  ${openbook2x} 2x
+                "
+                src="${openbook1x}"
+                alt="Openbook Logo"
+              />
+            </a>
+            <a class="bookshop-link" href="#">
+              <img
+                class="change-color"
+                srcset="
+                  ${bookshop1x} 1x,
+                  ${bookshop2x} 2x
+                "
+                src="${bookshop1x}"
+                alt="Bookshop Logo"
+              />
+            </a>
      
-      </ul>
+      </div>
     </div>
   </div>
 </div>`;
