@@ -86,7 +86,7 @@
 /* style btn to scroll up */
 #btnToTop {
   position: absolute;
-  bottom: 90;
+  bottom: -20;
   right: 4px;
   width: 54px;
   height: 54px;
