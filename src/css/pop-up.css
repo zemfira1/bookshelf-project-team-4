@@ -49,16 +49,14 @@ body.modal-open {
 .popup-modal-close {
   stroke: currentColor;
   fill: currentColor;
-  transition-property: fill stroke color;
+  transition-property: stroke;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .popup-modal-close:hover,
 .popup-modal-close:focus {
-  fill: #4f2ee8;
   stroke: #4f2ee8;
-  color: #4f2ee8;
 }
 
 .book-image {
@@ -121,7 +119,7 @@ body.modal-open {
   padding: 14px 28px;
   font-weight: 700;
   color: inherit;
-  transition-property: background-color color border;
+  transition-property: background-color, color, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -61,8 +61,8 @@
 }
 .darkmode .fix-amazon {
   stroke: #ffffff;
-  fill: #ffffff;
-  color: #ffffff;
+  /* fill: #ffffff;
+  color: #ffffff; */
   filter: brightness(0) invert(1);
 }
 .darkmode .popup-modal {
