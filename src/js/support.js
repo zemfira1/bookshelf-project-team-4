@@ -75,7 +75,7 @@ const supportItems = [
 ];
 
 let orgList = document.querySelector('.donation-organisation-list');
-let scrollBtn = document.querySelector('.scroll-btn')ж
+let scrollBtn = document.querySelector('.scroll-btn');
 
 function createSupportListMarkup(supportItems) {
   return supportItems
