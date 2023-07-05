@@ -40,7 +40,7 @@ function generateBookCard(book) {
       <div class="book-card-links">
         <a class="amazon-link" target="_blank">
               <img
-                class="change-color add-hover"
+                class="change-color fix-amazon add-hover"
                 srcset="
                   ${amazon1x} 1x,
                   ${amazon2x} 2x

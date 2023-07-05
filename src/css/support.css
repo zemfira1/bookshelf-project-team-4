@@ -1,34 +1,38 @@
-.container-support{
+.container-support {
   display: flex;
   flex-direction: column;
   width: 335px;
-  height: 352px;
+  height: 332px;
   margin-bottom: 40px;
   border-radius: 16px;
   background: rgb(79, 46, 232);
-  background: linear-gradient(180deg, rgba(79, 46, 232, 1) 0%, rgba(255, 255, 255, 1) 130%);
+  background: linear-gradient(
+    180deg,
+    rgba(79, 46, 232, 1) 0%,
+    rgba(255, 255, 255, 1) 130%
+  );
 }
 .container-support2 {
-  display:none;
+  display: none;
 }
-.support-section-title{
-    font-family: DM Sans;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 32px;
-    letter-spacing: -0.04em;
-    color:white;
-    text-align:center;
+.support-section-title {
+  font-family: DM Sans;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.04em;
+  color: white;
+  text-align: center;
 }
 
-.donation-organisation-list{
+.donation-organisation-list {
   overflow: hidden;
   margin-bottom: 16px;
   margin-left: 40px;
   margin-top: 40px;
 }
 
-.support-item{
+.support-item {
   width: 159px;
   height: 32px;
   display: flex;
@@ -41,21 +45,21 @@
   margin-bottom: 10px;
 }
 
-.support-item-number{
+.support-item-number {
   font-family: DM Sans;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    color:white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: white;
 }
-.support-image{
-  height: 42px;
-  color:#ffffff;
-  filter: brightness(0)invert(1);
+.support-image {
+  height: 30px;
+  color: #ffffff;
+  filter: brightness(0) invert(1);
 }
 
-.scroll-btn{
+.scroll-btn {
   width: 32px;
   height: 32px;
   border: none;
@@ -64,7 +68,8 @@
   margin-bottom: 20px;
 }
 
-.scroll-img-down,.scroll-img-up{
+.scroll-img-down,
+.scroll-img-up {
   width: 32px;
   height: 32px;
   border: none;
@@ -73,20 +78,19 @@
   margin-bottom: 20px;
 }
 
-.support-title-div{
+.support-title-div {
   display: flex;
   margin-top: 24px;
   margin-left: 40px;
-  
 }
 
-.ukraine-emblem{
- width: 20px;
- height: 32px;
- margin-left: 12px;
+.ukraine-emblem {
+  width: 20px;
+  height: 32px;
+  margin-left: 12px;
 }
 
-.hidden-scroll-support{
+.hidden-scroll-support {
   display: none;
 }
 
@@ -107,7 +111,7 @@
     height: 38px;
     margin-bottom: 14px;
   }
-  .donation-organisation-list{
+  .donation-organisation-list {
     margin-bottom: 32px;
   }
 }
@@ -117,20 +121,28 @@
     width: 356px;
     height: 490px;
   }
-.container-support2 {
-  display: flex;
-  flex-direction: column;
-  width: 356px;
-  height: 490px;
-  margin-bottom: 40px;
-  border-radius: 16px;
-  background: rgb(79, 46, 232);
-  background: linear-gradient(180deg, rgba(79, 46, 232, 1) 0%, rgba(255, 255, 255, 1) 130%);
-}
-  .donation-organisation-list{
+  .container-support2 {
+    display: flex;
+    flex-direction: column;
+    width: 356px;
+    height: 490px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    background: rgb(79, 46, 232);
+    background: linear-gradient(
+      180deg,
+      rgba(79, 46, 232, 1) 0%,
+      rgba(255, 255, 255, 1) 130%
+    );
+  }
+  .donation-organisation-list {
     margin-bottom: 40px;
   }
   .scroll-btn {
     margin-bottom: 24px;
   }
+}
+
+.support-mobile {
+  height: 358px;
 }
