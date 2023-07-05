@@ -123,7 +123,12 @@
   display: flex;
   align-items: center;
   border: none;
-  background-color: #4F2EE8;
+  background-color: #4f2ee8;
+}
+.book-card-remove-icon {
+  z-index: 100;
+  width: 28px;
+  height: 28px;
 }
 
 @media screen and (min-width: 768px) {
