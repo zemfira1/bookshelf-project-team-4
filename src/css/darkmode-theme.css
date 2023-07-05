@@ -65,3 +65,7 @@
   color: #ffffff;
   filter: brightness(0) invert(1);
 }
+.darkmode .popup-modal {
+  border: 2px solid;
+  border-color: #ffffff;
+}

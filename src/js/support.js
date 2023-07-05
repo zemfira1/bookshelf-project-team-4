@@ -76,7 +76,6 @@ const supportItems = [
 
 let orgList = document.querySelector('.donation-organisation-list');
 let scrollBtn = document.querySelector('.scroll-btn');
-let supportContainer = document.querySelector('.container-support');
 
 function createSupportListMarkup(supportItems) {
   return supportItems
@@ -106,13 +105,11 @@ function scrollTo() {
     scrollBtnUp.style.display = 'none';
     scrollBtnDown.style.display = 'block';
     scrollTop();
-    supportContainer.classList.remove('support-mobile');
   } else {
     scrollBottom();
     scrollBtn.classList.add('top');
     scrollBtnDown.style.display = 'none';
     scrollBtnUp.style.display = 'block';
-    supportContainer.classList.add('support-mobile');
   }
 }
 function scrollBottom() {
