@@ -6,6 +6,11 @@
   display: flex;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
+
 .popup-modal-background {
   position: fixed;
   top: 0;
@@ -15,7 +20,9 @@
   justify-content: center;
   align-items: center;
   background: rgba(17, 17, 17, 0.4);
+  overflow: auto;
 }
+
 .popup-modal {
   position: relative;
   width: 335px;
@@ -27,6 +34,7 @@
   border: 1px solid;
   border-color: #111111;
 }
+
 .popup-modal-close-button {
   position: absolute;
   right: 12px;
@@ -37,6 +45,7 @@
   background-color: transparent;
   margin-bottom: 4px;
 }
+
 .popup-modal-close {
   stroke: currentColor;
   fill: currentColor;
@@ -44,6 +53,7 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .popup-modal-close:hover,
 .popup-modal-close:focus {
   fill: #4f2ee8;

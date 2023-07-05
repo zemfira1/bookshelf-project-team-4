@@ -2,9 +2,7 @@ import axios from 'axios';
 
 const jsBooks = document.querySelector('.js-books');
 const popupModalBackground = document.querySelector('.popup-modal-background');
-const popupModalCloseButton = document.querySelector(
-  '.popup-modal-close-button'
-);
+const popupModalCloseButton = document.querySelector('.popup-modal-close-button');
 const bookImage = document.querySelector('.book-image');
 const bookTitle = document.querySelector('.book-title-pop');
 const bookAuthor = document.querySelector('.book-author');
@@ -13,11 +11,10 @@ const amazonLink = document.querySelector('.amazon-link');
 const bookshopLink = document.querySelector('.bookshop-link');
 const applebooksLink = document.querySelector('.applebooks-link');
 const addToListButton = document.querySelector('.add-to-list-button');
-const bookAddingText = document.querySelector(".book-adding-text");
+const bookAddingText = document.querySelector('.book-adding-text');
 
 let bookData;
-let bookShopingList =
-  JSON.parse(localStorage.getItem('bookShopingListLS')) || [];
+let bookShopingList = JSON.parse(localStorage.getItem('bookShopingListLS')) || [];
 
 jsBooks.addEventListener('click', openPopupModal);
 popupModalCloseButton.addEventListener('click', closePopupModal);
@@ -59,6 +56,7 @@ async function openPopupModal(event) {
     bookshopLink.setAttribute('href', bookshopURL);
     applebooksLink.setAttribute('href', applebooksURL);
     bookPresenseCheck();
+    document.body.style.overflow = 'hidden'; // Додаємо стиль, щоб заборонити прокрутку
   } catch {
     console.log('Error');
   }
@@ -67,6 +65,7 @@ async function openPopupModal(event) {
 function closePopupModal() {
   popupModalBackground.classList.replace('visible', 'hidden');
   jsBooks.addEventListener('click', openPopupModal);
+  document.body.style.overflow = ''; // Забираємо стиль, щоб дозволити прокрутку
 }
 
 async function getBookInfo(bookId) {
