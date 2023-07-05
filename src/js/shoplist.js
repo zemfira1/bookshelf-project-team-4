@@ -30,7 +30,7 @@ function generateBookCard(book) {
       </div>
       <button class="book-card-remove" data-bookid="${_id}">
         <svg class="book-card-remove-icon" data-bookid="${_id}" width="28" height="28">
-          <use href="./src/images/sprite.svg#icon-trash-shop"></use>
+          <use href="./images/sprite.svg#icon-trash-shop"></use>
         </svg>
       </button>
     </div>
