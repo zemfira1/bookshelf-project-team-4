@@ -2,7 +2,9 @@ import axios from 'axios';
 
 const jsBooks = document.querySelector('.js-books');
 const popupModalBackground = document.querySelector('.popup-modal-background');
-const popupModalCloseButton = document.querySelector('.popup-modal-close-button');
+const popupModalCloseButton = document.querySelector(
+  '.popup-modal-close-button'
+);
 const bookImage = document.querySelector('.book-image');
 const bookTitle = document.querySelector('.book-title-pop');
 const bookAuthor = document.querySelector('.book-author');
@@ -14,7 +16,8 @@ const addToListButton = document.querySelector('.add-to-list-button');
 const bookAddingText = document.querySelector('.book-adding-text');
 
 let bookData;
-let bookShopingList = JSON.parse(localStorage.getItem('bookShopingListLS')) || [];
+let bookShopingList =
+  JSON.parse(localStorage.getItem('bookShopingListLS')) || [];
 
 jsBooks.addEventListener('click', openPopupModal);
 popupModalCloseButton.addEventListener('click', closePopupModal);
@@ -38,8 +41,8 @@ async function openPopupModal(event) {
     bookData = await getBookInfo(event.target.parentNode.dataset.bookid);
     jsBooks.removeEventListener('click', openPopupModal);
     popupModalBackground.classList.replace('hidden', 'visible');
-    bookImage.setAttribute('src', bookData.book_image);
-    bookImage.setAttribute('alt', bookData.title);
+    bookImage.src = bookData.book_image;
+    bookImage.alt = bookData.title;
     bookTitle.textContent = bookData.title;
     bookAuthor.textContent = bookData.author;
     bookDescription.textContent = bookData.description;
@@ -52,9 +55,13 @@ async function openPopupModal(event) {
     const applebooksURL = bookData.buy_links.find(
       buyLink => buyLink.name === 'Apple Books'
     ).url;
-    amazonLink.setAttribute('href', amazonURL);
-    bookshopLink.setAttribute('href', bookshopURL);
-    applebooksLink.setAttribute('href', applebooksURL);
+    amazonLink.href = amazonURL;
+    bookshopLink.href = bookshopURL;
+    applebooksLink.href = applebooksURL;
+
+    // amazonLink.setAttribute('href', amazonURL);
+    // bookshopLink.setAttribute('href', bookshopURL);
+    // applebooksLink.setAttribute('href', applebooksURL);
     bookPresenseCheck();
     document.body.style.overflow = 'hidden'; // Додаємо стиль, щоб заборонити прокрутку
   } catch {
