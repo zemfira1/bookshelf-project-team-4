@@ -44,7 +44,7 @@
   width: 193px;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  align-items: center;
 }
 .book-card-image {
   width: 100px;
@@ -70,15 +70,15 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.book-card-remove-icon{
-  z-index: 5;
-}
+
 .book-card-description {
   width: 193px;
   height: 68px;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  padding-bottom: 6px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 .book-card-author {
   width: 100px;
@@ -90,8 +90,12 @@
   text-overflow: ellipsis;
 }
 .book-card-links {
+  width: 80px;
+  height: 16px;
   display: flex;
+  justify-content: space-between;
   gap: 8px;
+  align-items: center;
 }
 
 .img-shoplist-cards {
@@ -120,6 +124,9 @@
   align-items: center;
   border: none;
   background-color: #4f2ee8;
+}
+.book-card-remove-icon {
+  z-index: 5;
 }
 
 @media screen and (min-width: 768px) {
@@ -153,14 +160,21 @@
     width: 116px;
     height: 165px;
   }
+    .book-card-info{
+      gap: 14px;
+    }
   .book-card-description {
     width: 508px;
     height: 53px;
     white-space: wrap;
+    margin-bottom: 24px;
+
   }
-  .book-card-links {
-    gap: 16px;
-  }
+    .book-card-links {
+      width: 140px;
+      height: 30px;
+      gap: 16px;
+    }
   .book-card-title {
     width: max-content;
   }

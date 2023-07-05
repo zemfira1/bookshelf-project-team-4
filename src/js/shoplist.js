@@ -5,6 +5,10 @@ import openbook2x from '../images/openbook-2x-min.png';
 import bookshop1x from '../images/bookshop-1x-min.png';
 import bookshop2x from '../images/bookshop-2x-min.png';
 
+const amazonLink = document.querySelector('.amazon-link');
+const bookshopLink = document.querySelector('.bookshop-link');
+const applebooksLink = document.querySelector('.applebooks-link');
+
 function getSavedBooks() {
   const savedBooks = localStorage.getItem('bookShopingListLS');
   if (savedBooks) {
@@ -25,7 +29,7 @@ function generateBookCard(book) {
         <p class="book-card-category">${list_name}</p>
       </div>
       <button class="book-card-remove" data-bookid="${_id}">
-        <svg class="book-card-remove-icon" width="34" height="34">
+        <svg class="book-card-remove-icon" width="28" height="28">
           <use href="/sprite.f14d31f7.svg#icon-trash-03"></use>
         </svg>
       </button>
@@ -34,7 +38,7 @@ function generateBookCard(book) {
     <div class="book-card-footer">
       <p class="book-card-author">Author: ${author}</p>
       <div class="book-card-links">
-        <a class="amazon-link" href="#">
+        <a class="amazon-link" target="_blank">
               <img
                 class="change-color add-hover"
                 srcset="
@@ -45,7 +49,7 @@ function generateBookCard(book) {
                 alt="Amazon Logo"
               />
             </a>
-            <a class="applebooks-link" href="#">
+            <a class="applebooks-link" target="_blank">
               <img
                 class="change-color"
                 srcset="
@@ -56,7 +60,7 @@ function generateBookCard(book) {
                 alt="Openbook Logo"
               />
             </a>
-            <a class="bookshop-link" href="#">
+            <a class="bookshop-link" target="_blank">
               <img
                 class="change-color"
                 srcset="

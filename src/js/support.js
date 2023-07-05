@@ -87,7 +87,7 @@ function createSupportListMarkup(supportItems) {
           <img
             class="support-image"
             src="${img}"
-            srcset="${img2x} 2x"
+            srcset="${img} 1x, ${img2x} 2x"
             alt="${title}"
           />
         </a>
