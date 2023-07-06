@@ -16,7 +16,7 @@ const request = new BookShelf();
 
 async function onClickCategory(e) {
   e.preventDefault();
-  if (!e.target.classList.contains('category-link')) {
+  if (!e.target.classList.contains('category-link-text')) {
     return;
   }
   try {

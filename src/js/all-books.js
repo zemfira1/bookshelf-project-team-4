@@ -193,7 +193,7 @@ export default async function onClickSeeMore(e) {
     refs.title.innerHTML = `${startTitle} <span class="title-color">${endTitle}</span>`;
     const currentCategory = document.querySelector('.current-category');
     const newCurrentCategory = document.querySelector(
-      `.category-link[data-name="${title}"]`
+      `.category-link-text[data-name="${title}"]`
     );
     if (currentCategory) {
       currentCategory.classList.remove('current-category');
@@ -206,6 +206,7 @@ export default async function onClickSeeMore(e) {
     refs.books.innerHTML = markUp;
     hideLoader('.books .loader');
     refs.books.removeEventListener('click', onClickSeeMore);
+    window.scroll(0, 0);
   } catch (error) {
     Notify.failure(error.message);
     refs.books.innerHTML = `<div class="error-block">

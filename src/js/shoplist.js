@@ -31,7 +31,7 @@ function generateBookCard(book) {
       </div>
       <button class="book-card-remove" data-bookid="${_id}">
        <svg class="book-card-remove-icon" width="28" height="28" data-bookid="${_id}">
-        <use href="${btnSvg}#icon-trash-shop"></use>
+        <use data-name="book-card-remove" href="${btnSvg}#icon-trash-shop"></use>
       </svg>
       </button>
     </div>
@@ -102,7 +102,8 @@ function renderBooks() {
 function handleRemoveBook(event) {
   if (
     event.target.classList.contains('book-card-remove') ||
-    event.target.classList.contains('book-card-remove-icon')
+    event.target.classList.contains('book-card-remove-icon') ||
+    event.target.dataset.name === 'book-card-remove'
   ) {
     const bookId = event.target.getAttribute('data-bookid');
     removeBookFromList(bookId);
