@@ -5,7 +5,7 @@
   letter-spacing: -0.32px;
   margin-bottom: 24px;
   width: 307px;
-  color: rgba(59, 59, 59, 0.6);
+  color: rgba(59, 59, 59, 0.8);
 }
 .js-category-block {
   width: 335px;
@@ -16,6 +16,9 @@
   scrollbar-width: 8px; */
   display: flex;
   flex-direction: column;
+}
+.category-link-text{
+  color: rgba(59, 59, 59, 0.8);
 }
 .current-category{
   color: #4f2ee8;
