@@ -61,11 +61,24 @@
 }
 .darkmode .fix-amazon {
   stroke: #ffffff;
-  /* fill: #ffffff;
-  color: #ffffff; */
   filter: brightness(0) invert(1);
 }
 .darkmode .popup-modal {
   border: 2px solid;
   border-color: #ffffff;
+}
+.darkmode .topbook-title {
+  color: #b4afaf;
+}
+.darkmode .book-author {
+  color: #b4afaf;
+}
+.darkmode .book-card-author {
+  color: #b4afaf;
+}
+.darkmode .book-card-category {
+  color: #b4afaf;
+}
+.darkmode .category-link-text {
+  color: #ffffff;
 }
