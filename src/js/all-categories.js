@@ -34,18 +34,25 @@ async function addMarkupCategoryList() {
     const markUp = response
       .map(({ list_name }) => {
         return `<li class="category-item">
-      <a class="category-link" href="#" data-name="${list_name}"><span class="category-link-text">${list_name}</span></a></li>`;
+      <a class="category-link" href="#" data-name="${list_name}">
+      <span class="category-link-text" data-name="${list_name}">${list_name}</span>
+      </a></li>`;
       })
       .join('');
     return `<ul class="category-list">
-      <li class="category-item current-category"><a class="category-link" href="#" data-name="All categories"><span class="category-link-text">All categories</span></a></li>
+      <li class="category-item">
+      <a class="category-link" href="#" data-name="All categories">
+      <span class="category-link-text current-category" data-name="All categories">All categories</span>
+      </a></li>
       ${markUp}
     </ul>`;
   } catch (error) {
     Notify.failure(error.message);
     return `<ul class="category-list">
-      <li class="category-item current-category"><a class="category-link" href="#" data-name="All categories"><span class="category-link-text">All categories</span></a></li>
-    </ul>`;
+      <li class="category-item">
+      <a class="category-link" href="#" data-name="All categories">
+      <span class="category-link-text current-category">All categories</span>
+      </a></li></ul>`;
   }
 }
 
