@@ -94,12 +94,12 @@ body.modal-open {
   width: 173px;
   height: 36px;
 }
-.change-color {
+/* .change-color {
   filter: grayscale(1);
 }
 .change-color:hover {
   filter: grayscale(1) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.2));
-}
+} */
 
 .button-center {
   display: flex;
